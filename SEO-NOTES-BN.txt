@@ -1,0 +1,9 @@
+ShobPaben.online — SEO and deployment notes
+
+1. Upload index.html, css/styles.css and js/app.js to their existing locations.
+2. Keep the existing assets folder; these files reference the current hero, banner, product and favicon images.
+3. Upload robots.txt and sitemap.xml to the website root.
+4. The canonical/social/schema URLs are set to https://shobpaben.online/. If your live canonical domain uses www or a different protocol/domain, update every matching URL in index.html, app.js, robots.txt and sitemap.xml consistently.
+5. The site currently uses hash-based client-side routes. This provides dynamic browser titles/descriptions, but category and product pages do not have separate crawlable URL paths. For strong per-product SEO, each category/product eventually needs a unique server-served URL or prerendered static page, plus product-specific structured data.
+6. The home page structured data describes the store using details present in the supplied code. Validate the deployed page with Google Rich Results Test and Search Console after the domain and assets are live.
+7. No business address, social profiles, shipping policy URL or product offer schema has been invented.
