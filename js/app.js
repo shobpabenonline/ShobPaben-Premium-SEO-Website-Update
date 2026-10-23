@@ -9,8 +9,8 @@
    IMPORTANT:
    • The checkout endpoint URL is present below, but its deployment and sheet write
      have not been verified. The matching Code.gs and sheet setup are required.
-   • Orders are treated as submitted only after the endpoint returns the expected
-     postMessage confirmation. This is a manual-order workflow, not a payment gateway.
+   • Orders are treated as submitted only after the endpoint confirms the exact
+     Order ID exists in the sheet. This is a manual-order workflow, not a payment gateway.
    • Product catalogue, delivery fees, coupons, and prices are browser-provided;
      verify business values and add trusted server-side validation before launch.
 
@@ -2143,7 +2143,7 @@
 
   const dom = {};
   let activeLanguage = 'en';
-  const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbxacR0It2udg0wDwUPr2HKWXwHVwUlCxYQXpaxpMYdN1LEOglQOdPrvyU22oD9FdmrVEQ/exec'; // Supplied endpoint; use the deployment for the matching Code.gs.
+  const GOOGLE_SHEETS_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbwTNN6CIWCxGtN4IK1a_RZIZc3EjT76eTaQB_itq11q4PJzNMCAhVM3qsoPOsxseFtEHw/exec'; // Supplied endpoint; use the deployment for the matching Code.gs.
 
   const STATIC_TRANSLATIONS = [
     ['#announcement-message', 'Explore our latest offers.', 'আমাদের সর্বশেষ অফারগুলো দেখুন।', 'text'],
@@ -4496,9 +4496,16 @@
       },
       paymentMethod: values.paymentMethod,
       couponCode: totals.couponValid ? state.cart.couponCode : '',
-      lines: state.cart.lines.map(line => ({
-        productId: line.productId, variant: line.variant || {}, qty: line.qty
-      })),
+      lines: state.cart.lines.map(line => {
+        const product = PUBLIC_BY_ID.get(line.productId);
+        return {
+          productId: line.productId,
+          name: product ? product.name : '',
+          variant: line.variant || {},
+          qty: line.qty,
+          unitPrice: product ? product.price : null
+        };
+      }),
       totals: {
         subtotal: totals.subtotal, discount: totals.discount,
         delivery: totals.delivery, grandTotal: totals.grandTotal
@@ -4520,8 +4527,9 @@
     state.lastOrderId = order.id;
   }
 
-  // Submit as a normal HTML form to a hidden iframe. This avoids browser CORS
-  // restrictions with Apps Script and waits for a postMessage response from Code.gs.
+  // Submit the order with a normal form POST, then verify its Order ID using
+  // the Apps Script status endpoint. This avoids relying on cross-origin access
+  // to the iframe response or postMessage through Apps Script's sandbox.
   function submitOrderToGoogleSheets(order) {
     return new Promise((resolve, reject) => {
       if (!GOOGLE_SHEETS_WEB_APP_URL) {
@@ -4563,10 +4571,17 @@
 
       let finished = false;
       let timeoutId = null;
+      let pollTimer = null;
+      let activeScript = null;
+      let activeCallback = '';
 
       const cleanup = () => {
-        window.removeEventListener('message', onMessage);
         if (timeoutId !== null) window.clearTimeout(timeoutId);
+        if (pollTimer !== null) window.clearTimeout(pollTimer);
+        if (activeScript) activeScript.remove();
+        if (activeCallback) {
+          try { delete window[activeCallback]; } catch (e) { window[activeCallback] = undefined; }
+        }
         form.remove();
         iframe.remove();
       };
@@ -4578,29 +4593,68 @@
         callback(value);
       };
 
-      const onMessage = event => {
-        // Accept responses only from the exact iframe used for this order.
-        if (event.source !== iframe.contentWindow) return;
-        const data = event.data;
-        if (!data || data.type !== 'shobpaben-order-result') return;
+      const verifySavedOrder = () => {
+        if (finished) return;
+        const callbackName = '__shobpOrderCheck_' + Date.now() + '_' + Math.floor(Math.random() * 1000000);
+        const script = document.createElement('script');
+        const separator = GOOGLE_SHEETS_WEB_APP_URL.indexOf('?') === -1 ? '?' : '&';
+        activeCallback = callbackName;
+        activeScript = script;
 
-        if (data.success === true && String(data.orderId || '') === String(order.id)) {
-          finish(resolve, data);
-        } else {
-          finish(reject, new Error(data.message || 'The order could not be saved to Google Sheets.'));
-        }
+        const retry = () => {
+          if (finished) return;
+          if (script.parentNode) script.parentNode.removeChild(script);
+          activeScript = null;
+          if (activeCallback) {
+            try { delete window[activeCallback]; } catch (e) { window[activeCallback] = undefined; }
+            activeCallback = '';
+          }
+          pollTimer = window.setTimeout(verifySavedOrder, 900);
+        };
+
+        window[callbackName] = data => {
+          if (finished) return;
+          if (!data || data.type !== 'shobpaben-order-status' || data.success !== true) {
+            retry();
+            return;
+          }
+          if (String(data.orderId || '') !== String(order.id)) {
+            finish(reject, new Error('Google Sheets returned a status for a different Order ID.'));
+            return;
+          }
+          if (data.exists === true) {
+            finish(resolve, { type: 'shobpaben-order-result', success: true, orderId: String(order.id), message: 'Order saved or already saved.' });
+            return;
+          }
+          retry();
+        };
+
+        script.onerror = retry;
+        script.onload = () => {
+          // A valid JSONP response invokes the callback. If it did not, retry.
+          window.setTimeout(() => {
+            if (activeCallback === callbackName && !finished) retry();
+          }, 100);
+        };
+        script.src = GOOGLE_SHEETS_WEB_APP_URL + separator +
+          'action=orderStatus&orderId=' + encodeURIComponent(order.id) +
+          '&callback=' + encodeURIComponent(callbackName) +
+          '&_=' + Date.now();
+        (document.head || document.body).appendChild(script);
       };
 
-      window.addEventListener('message', onMessage);
       document.body.appendChild(iframe);
       document.body.appendChild(form);
 
       timeoutId = window.setTimeout(() => {
-        finish(reject, new Error('No confirmation was received from Google Sheets. Please try again; the same order ID will be reused to reduce duplicates.'));
+        finish(reject, new Error('Google Sheets did not confirm this Order ID in time. You can retry safely; the same pending Order ID will be checked for an existing save.'));
       }, 30000);
 
       try {
         form.submit();
+        // The save may complete even if the opaque iframe response is lost.
+        // Poll the independent status endpoint and require an exact ID match.
+        window.setTimeout(verifySavedOrder, 500);
       } catch (error) {
         finish(reject, error);
       }
