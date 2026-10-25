@@ -109,7 +109,7 @@
     { id: 'electronics',  name: 'Electronics & Gadgets',  description: 'Smart devices, accessories and everyday gadgets.' },
     { id: 'home-kitchen', name: 'Home & Kitchen',         description: 'Cookware, storage and useful household items.' },
     { id: 'beauty',       name: 'Beauty & Personal Care', description: 'Skincare, grooming and personal care essentials.' },
-    { id: 'fashion',      name: 'Fashion & Accessories',  description: 'Clothing, bags and accessories for every day.' },
+    { id: 'fashion',      name: 'Games & Toys',           description: 'Board games, puzzles and creative toys for every age.' },
     { id: 'baby-kids',    name: 'Baby & Kids',            description: 'Everyday products for babies, toddlers and children.' }
   ];
 
@@ -1036,424 +1036,338 @@
         "published": true
       }
     ],
-    // Fashion & Accessories — existing product IDs and data
+    // Games & Toys — 30 published product records. Legacy IDs are retained for compatibility.
     'fashion': [
       {
         "id": "fashion-001",
-        "name": "Cotton Polo Shirt",
-        "price": 790,
-        "originalPrice": 990,
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Building Blocks Set (120 Pieces)",
+        "price": 990,
+        "originalPrice": 1290,
         "stock": 60,
-        "description": "Classic-fit polo shirt in soft cotton.",
+        "description": "A colorful building-block set that encourages creativity, coordination and imaginative play.",
         "published": true,
         "isFlashDeal": true,
         "isFeatured": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "S",
-              "M",
-              "L",
-              "XL"
-            ]
-          },
-          {
-            "name": "Colour",
-            "options": [
-              "Navy",
-              "Black",
-              "White"
-            ]
-          }
-        ],
         "specs": {
-          "Material": "Cotton"
+          "Pieces": "120 pieces",
+          "Recommended age": "3+ years"
         }
       },
       {
         "id": "fashion-002",
-        "name": "Men's Casual T-Shirt",
-        "price": 450,
-        "originalPrice": 590,
-        "stock": 90,
-        "description": "Everyday round-neck cotton T-shirt.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Remote Control Racing Car",
+        "price": 1490,
+        "originalPrice": 1890,
+        "stock": 30,
+        "description": "A fun remote-control car for indoor racing and imaginative adventures.",
         "published": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "M",
-              "L",
-              "XL"
-            ]
-          }
-        ]
+        "isFeatured": true,
+        "specs": {
+          "Control": "Remote control",
+          "Recommended age": "6+ years"
+        }
       },
       {
         "id": "fashion-003",
-        "name": "Cotton Panjabi",
-        "price": 1450,
-        "originalPrice": 1790,
-        "stock": 35,
-        "description": "Comfortable cotton panjabi for festive and daily wear.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Alphabet & Number Puzzle Board",
+        "price": 350,
+        "originalPrice": 450,
+        "stock": 75,
+        "description": "A colorful learning puzzle that helps children practice letters, numbers and matching.",
         "published": true,
-        "isNewArrival": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "M",
-              "L",
-              "XL",
-              "XXL"
-            ]
-          }
-        ]
+        "isNewArrival": true
       },
       {
         "id": "fashion-004",
-        "name": "Slim-Fit Denim Jeans",
-        "price": 1790,
-        "originalPrice": 2190,
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Wooden Shape Sorter",
+        "price": 690,
+        "originalPrice": 890,
         "stock": 40,
-        "description": "Stretch denim jeans in a slim fit.",
-        "published": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "30",
-              "32",
-              "34",
-              "36"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "fashion-005",
-        "name": "Women's Cotton Kurti",
-        "price": 1190,
-        "originalPrice": 1490,
-        "stock": 38,
-        "description": "Printed cotton kurti for daily wear.",
-        "published": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "S",
-              "M",
-              "L",
-              "XL"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "fashion-006",
-        "name": "Cotton Saree",
-        "price": 1890,
-        "originalPrice": 2290,
-        "stock": 22,
-        "description": "Lightweight cotton saree with a woven border.",
+        "description": "A shape-sorting toy designed to introduce colors, shapes and problem-solving.",
         "published": true,
         "isFeatured": true
       },
       {
-        "id": "fashion-007",
-        "name": "Printed Dupatta",
-        "price": 590,
-        "originalPrice": null,
+        "id": "fashion-005",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Magnetic Building Tiles (32 Pieces)",
+        "price": 1690,
+        "originalPrice": 1990,
+        "stock": 25,
+        "description": "Magnetic construction tiles for making towers, houses and imaginative 3D designs.",
+        "published": true,
+        "isFlashDeal": true,
+        "isFeatured": true
+      },
+      {
+        "id": "fashion-006",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Family Board Game Set",
+        "price": 390,
+        "originalPrice": 490,
         "stock": 50,
-        "description": "Soft printed dupatta to match your outfit.",
-        "published": true
+        "description": "A family game bundle for fun game nights and friendly competition.",
+        "published": true,
+        "isBestSeller": true
+      },
+      {
+        "id": "fashion-007",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Chess Board Game Set",
+        "price": 550,
+        "originalPrice": 690,
+        "stock": 35,
+        "description": "A classic chess set for developing strategy, focus and logical thinking.",
+        "published": true,
+        "isFeatured": true
       },
       {
         "id": "fashion-008",
-        "name": "Chiffon Hijab",
-        "price": 390,
-        "originalPrice": null,
-        "stock": 70,
-        "description": "Light chiffon hijab in plain colours.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Jigsaw Puzzle (100 Pieces)",
+        "price": 450,
+        "originalPrice": 590,
+        "stock": 45,
+        "description": "A 100-piece jigsaw puzzle for relaxed, screen-free play at home.",
         "published": true,
-        "variants": [
-          {
-            "name": "Colour",
-            "options": [
-              "Black",
-              "Beige",
-              "Maroon"
-            ]
-          }
-        ]
+        "isNewArrival": true
       },
       {
         "id": "fashion-009",
-        "name": "Sports Sneakers",
-        "price": 2250,
-        "originalPrice": 2790,
-        "stock": 26,
-        "description": "Cushioned sneakers for walking and light workouts.",
-        "published": true,
-        "isNewArrival": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "39",
-              "40",
-              "41",
-              "42",
-              "43"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "fashion-010",
-        "name": "Leather Sandals",
-        "price": 1650,
-        "originalPrice": null,
-        "stock": 24,
-        "description": "Comfortable leather sandals for daily wear.",
-        "published": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "40",
-              "41",
-              "42",
-              "43"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "fashion-011",
-        "name": "Analog Wrist Watch",
-        "price": 1890,
-        "originalPrice": 2390,
-        "stock": 18,
-        "description": "Classic analog watch with a stainless steel case.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Toy Doctor Play Set",
+        "price": 790,
+        "originalPrice": 990,
+        "stock": 36,
+        "description": "A pretend-play doctor kit that lets children explore imaginative role play.",
         "published": true
       },
       {
+        "id": "fashion-010",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Kids Kitchen Play Set",
+        "price": 1290,
+        "originalPrice": 1590,
+        "stock": 22,
+        "description": "A pretend kitchen set for creative make-believe cooking and serving games.",
+        "published": true,
+        "isFeatured": true
+      },
+      {
+        "id": "fashion-011",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Bubble Blaster Toy",
+        "price": 450,
+        "originalPrice": 590,
+        "stock": 55,
+        "description": "A bubble-blasting toy for supervised outdoor play and parties.",
+        "published": true,
+        "isFlashDeal": true
+      },
+      {
         "id": "fashion-012",
-        "name": "Lightweight Sunglasses",
-        "price": 650,
-        "originalPrice": 850,
-        "stock": 45,
-        "description": "Lightweight-frame sunglasses for sunny days.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Pull-Back Toy Cars (6-Piece Set)",
+        "price": 390,
+        "originalPrice": 490,
+        "stock": 65,
+        "description": "Six pull-back cars for racing, collecting and pretend road adventures.",
         "published": true
       },
       {
         "id": "fashion-013",
-        "name": "Leather Wallet",
-        "price": 790,
-        "originalPrice": null,
-        "stock": 40,
-        "description": "Slim bi-fold wallet with card slots.",
-        "published": true
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Die-Cast Model Car",
+        "price": 250,
+        "originalPrice": 320,
+        "stock": 90,
+        "description": "A small die-cast model car for play or collecting.",
+        "published": true,
+        "isBestSeller": true
       },
       {
         "id": "fashion-014",
-        "name": "Canvas Belt",
-        "price": 350,
-        "originalPrice": null,
-        "stock": 60,
-        "description": "Adjustable canvas belt with metal buckle.",
-        "published": true
-      },
-      {
-        "id": "fashion-015",
-        "name": "Everyday Backpack",
-        "price": 1590,
-        "originalPrice": 1950,
-        "stock": 28,
-        "description": "Roomy backpack with a laptop compartment.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Remote Control Stunt Car",
+        "price": 1790,
+        "originalPrice": 2190,
+        "stock": 18,
+        "description": "A stunt-style remote-control car for twists, turns and action-packed play.",
         "published": true,
+        "isNewArrival": true,
         "isFeatured": true
       },
       {
+        "id": "fashion-015",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Plush Teddy Bear (30 cm)",
+        "price": 650,
+        "originalPrice": 850,
+        "stock": 30,
+        "description": "A soft plush teddy bear suitable for cuddles, gifts and imaginative play.",
+        "published": true
+      },
+      {
         "id": "fashion-016",
-        "name": "Women's Handbag",
-        "price": 1850,
-        "originalPrice": 2250,
-        "stock": 20,
-        "description": "Structured handbag with zip closure.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Baby Rattle & Teether Set",
+        "price": 390,
+        "originalPrice": 490,
+        "stock": 45,
+        "description": "A baby rattle and teether set designed for supervised sensory play.",
         "published": true
       },
       {
         "id": "fashion-017",
-        "name": "Canvas Tote Bag",
-        "price": 450,
-        "originalPrice": null,
-        "stock": 65,
-        "description": "Reusable tote bag for shopping and daily use.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Rainbow Stacking Rings",
+        "price": 350,
+        "originalPrice": 450,
+        "stock": 50,
+        "description": "Bright stacking rings that support color recognition and hand-eye coordination.",
         "published": true
       },
       {
         "id": "fashion-018",
-        "name": "Baseball Cap",
-        "price": 390,
-        "originalPrice": null,
-        "stock": 55,
-        "description": "Adjustable cotton cap.",
-        "published": true
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Musical Learning Toy",
+        "price": 890,
+        "originalPrice": 1090,
+        "stock": 26,
+        "description": "An interactive musical toy for early sound exploration and play.",
+        "published": true,
+        "isNewArrival": true
       },
       {
         "id": "fashion-019",
-        "name": "Winter Scarf",
-        "price": 550,
-        "originalPrice": null,
-        "stock": 30,
-        "description": "Soft scarf for cooler weather.",
-        "published": true
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Drawing & Coloring Kit (48 Pieces)",
+        "price": 590,
+        "originalPrice": 750,
+        "stock": 40,
+        "description": "A creative art kit with drawing and coloring supplies for young artists.",
+        "published": true,
+        "isFeatured": true
       },
       {
         "id": "fashion-020",
-        "name": "Cotton Socks (5 pairs)",
-        "price": 350,
-        "originalPrice": null,
-        "stock": 100,
-        "description": "Breathable cotton socks in a value pack.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Watercolor Paint Set (24 Colors)",
+        "price": 290,
+        "originalPrice": 390,
+        "stock": 75,
+        "description": "A 24-color watercolor set for art projects and supervised creative activities.",
         "published": true
       },
       {
         "id": "fashion-021",
-        "name": "Pullover Hoodie",
-        "price": 1490,
-        "originalPrice": 1790,
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "DIY Arts & Crafts Kit",
+        "price": 690,
+        "originalPrice": 890,
         "stock": 32,
-        "description": "Warm fleece-lined hoodie.",
+        "description": "A hands-on craft kit for making simple art projects and decorations.",
         "published": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "M",
-              "L",
-              "XL"
-            ]
-          }
-        ]
+        "isNewArrival": true
       },
       {
         "id": "fashion-022",
-        "name": "Formal Shirt",
-        "price": 1190,
-        "originalPrice": 1450,
-        "stock": 34,
-        "description": "Full-sleeve formal shirt for office wear.",
-        "published": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "M",
-              "L",
-              "XL"
-            ]
-          }
-        ]
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Kids Magnetic Dart Board",
+        "price": 750,
+        "originalPrice": 950,
+        "stock": 24,
+        "description": "A magnetic dart-board game for supervised target practice and friendly challenges.",
+        "published": true
       },
       {
         "id": "fashion-023",
-        "name": "Formal Trousers",
-        "price": 1390,
-        "originalPrice": null,
-        "stock": 27,
-        "description": "Straight-cut trousers for office wear.",
-        "published": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "30",
-              "32",
-              "34",
-              "36"
-            ]
-          }
-        ]
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Flying Disc (Frisbee)",
+        "price": 250,
+        "originalPrice": 350,
+        "stock": 60,
+        "description": "A lightweight flying disc for outdoor fun at parks and open spaces.",
+        "published": true
       },
       {
         "id": "fashion-024",
-        "name": "Women's Flat Sandals",
-        "price": 990,
-        "originalPrice": 1190,
-        "stock": 36,
-        "description": "Lightweight flat sandals for daily use.",
-        "published": true,
-        "variants": [
-          {
-            "name": "Size",
-            "options": [
-              "36",
-              "37",
-              "38",
-              "39",
-              "40"
-            ]
-          }
-        ]
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Kids Badminton Set",
+        "price": 690,
+        "originalPrice": 890,
+        "stock": 28,
+        "description": "A starter badminton set for family recreation and outdoor activity.",
+        "published": true
       },
       {
         "id": "fashion-025",
-        "name": "Fashion Earrings Set (6 pairs)",
-        "price": 390,
-        "originalPrice": null,
-        "stock": 80,
-        "description": "Assorted earrings in a gift pouch.",
-        "published": true
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Mini Basketball Hoop Set",
+        "price": 1190,
+        "originalPrice": 1490,
+        "stock": 20,
+        "description": "A mini hoop set for practicing shots and enjoying indoor play.",
+        "published": true,
+        "isFeatured": true
       },
       {
         "id": "fashion-026",
-        "name": "Bracelet Set (3 pcs)",
-        "price": 450,
-        "originalPrice": null,
-        "stock": 60,
-        "description": "Stackable bracelets for casual styling.",
-        "published": true
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Mini Football (Size 3)",
+        "price": 490,
+        "originalPrice": 650,
+        "stock": 42,
+        "description": "A size 3 mini football for casual practice and recreational play.",
+        "published": true,
+        "isFlashDeal": true
       },
       {
         "id": "fashion-027",
-        "name": "Folding Umbrella",
-        "price": 590,
-        "originalPrice": 750,
-        "stock": 48,
-        "description": "Compact umbrella with auto-open button.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Dominoes Game Set",
+        "price": 350,
+        "originalPrice": 450,
+        "stock": 50,
+        "description": "A classic dominoes set for number matching and family game sessions.",
         "published": true
       },
       {
         "id": "fashion-028",
-        "name": "Travel Duffel Bag",
-        "price": 1950,
-        "originalPrice": 2350,
-        "stock": 17,
-        "description": "Spacious duffel bag for short trips.",
-        "published": true
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Playing Cards Deck",
+        "price": 120,
+        "originalPrice": 150,
+        "stock": 120,
+        "description": "A standard deck of playing cards for a variety of family card games.",
+        "published": true,
+        "isBestSeller": true
       },
       {
         "id": "fashion-029",
-        "name": "Leather Watch Strap",
-        "price": 450,
-        "originalPrice": null,
-        "stock": 44,
-        "description": "Replacement strap with quick-release pins.",
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "3×3 Speed Cube Puzzle",
+        "price": 290,
+        "originalPrice": 390,
+        "stock": 80,
+        "description": "A classic 3×3 twisty cube puzzle for practice, focus and problem-solving.",
         "published": true
       },
       {
         "id": "fashion-030",
-        "name": "Cotton Gamcha",
-        "price": 250,
-        "originalPrice": null,
-        "stock": 75,
-        "description": "Traditional cotton gamcha towel.",
-        "published": true
+        "image": "assets/images/products/placeholder-product.jpg",
+        "name": "Doll House Play Set",
+        "price": 1890,
+        "originalPrice": 2290,
+        "stock": 15,
+        "description": "A dollhouse play set for storytelling and imaginative role play.",
+        "published": true,
+        "isNewArrival": true,
+        "isFeatured": true
       }
     ],
     // Baby & Kids — existing product IDs and data
@@ -1677,7 +1591,7 @@
       },
       {
         "id": "baby-kids-020",
-        "name": "Fashion Doll Set",
+        "name": "Doll Styling & Dress-Up Play Set",
         "price": 890,
         "originalPrice": null,
         "stock": 28,
@@ -2160,7 +2074,7 @@
     ['#main-navigation-menu a[data-category="electronics"]', 'Electronics & Gadgets', 'ইলেকট্রনিক্স ও গ্যাজেটস', 'text'],
     ['#main-navigation-menu a[data-category="home-kitchen"]', 'Home & Kitchen', 'ঘর ও রান্নাঘর', 'text'],
     ['#main-navigation-menu a[data-category="beauty"]', 'Beauty & Personal Care', 'সৌন্দর্য ও ব্যক্তিগত পরিচর্যা', 'text'],
-    ['#main-navigation-menu a[data-category="fashion"]', 'Fashion & Accessories', 'ফ্যাশন ও অ্যাক্সেসরিজ', 'text'],
+    ['#main-navigation-menu a[data-category="fashion"]', 'Games & Toys', 'গেমস ও খেলনা', 'text'],
     ['#main-navigation-menu a[data-category="baby-kids"]', 'Baby & Kids', 'শিশু ও কিডস', 'text'],
     ['#main-navigation-menu a[data-action="open-cart"]', 'Cart', 'কার্ট', 'text'],
     ['#main-navigation-menu a[data-page="wishlist-page"]', 'Wishlist', 'ইচ্ছেতালিকা', 'text'],
@@ -2170,7 +2084,7 @@
     ['#main-navigation-menu a[data-category="electronics"]', 'Electronics & Gadgets', 'ইলেকট্রনিক্স ও গ্যাজেটস', 'text'],
     ['#main-navigation-menu a[data-category="home-kitchen"]', 'Home & Kitchen', 'ঘর ও রান্নাঘর', 'text'],
     ['#main-navigation-menu a[data-category="beauty"]', 'Beauty & Personal Care', 'সৌন্দর্য ও ব্যক্তিগত পরিচর্যা', 'text'],
-    ['#main-navigation-menu a[data-category="fashion"]', 'Fashion & Accessories', 'ফ্যাশন ও অ্যাক্সেসরিজ', 'text'],
+    ['#main-navigation-menu a[data-category="fashion"]', 'Games & Toys', 'গেমস ও খেলনা', 'text'],
     ['#main-navigation-menu a[data-category="baby-kids"]', 'Baby & Kids', 'শিশু ও কিডস', 'text'],
     ['#main-navigation-menu a[data-action="open-cart"]', 'Cart', 'কার্ট', 'text'],
     ['#main-navigation-menu a[data-page="wishlist-page"]', 'Wishlist', 'ইচ্ছেতালিকা', 'text'],
@@ -2182,7 +2096,7 @@
     ['#electronics-section .section-subtitle', 'Smart devices, accessories and everyday gadgets.', 'স্মার্ট ডিভাইস, অ্যাক্সেসরিজ ও দৈনন্দিন গ্যাজেট।', 'text'],
     ['#home-kitchen-section .section-subtitle', 'Cookware, storage and useful household items.', 'রান্নার সামগ্রী, সংরক্ষণ ও ঘরের প্রয়োজনীয় জিনিস।', 'text'],
     ['#beauty-section .section-subtitle', 'Skincare, grooming and personal care essentials.', 'ত্বকের যত্ন, গ্রুমিং ও ব্যক্তিগত পরিচর্যার প্রয়োজনীয় পণ্য।', 'text'],
-    ['#fashion-section .section-subtitle', 'Clothing, bags and accessories for every day.', 'প্রতিদিনের পোশাক, ব্যাগ ও অ্যাক্সেসরিজ।', 'text'],
+    ['#fashion-section .section-subtitle', 'Board games, puzzles and creative toys for every age.', 'বোর্ড গেম, পাজল ও সব বয়সের জন্য সৃজনশীল খেলনা।', 'text'],
     ['#baby-kids-section .section-subtitle', 'Everyday products for babies, toddlers and children.', 'শিশু ও বাচ্চাদের দৈনন্দিন প্রয়োজনীয় পণ্য।', 'text'],
     ['#new-arrivals .section-subtitle', 'Recently added products.', 'সম্প্রতি যুক্ত হওয়া পণ্য।', 'text'],
     ['#best-sellers .section-subtitle', 'Popular products, shown when real sales data is available.', 'প্রকৃত বিক্রির তথ্য থাকলে জনপ্রিয় পণ্য দেখানো হবে।', 'text'],
@@ -2193,7 +2107,7 @@
     ['#electronics-section-heading', 'Electronics & Gadgets', 'ইলেকট্রনিক্স ও গ্যাজেটস', 'text'],
     ['#home-kitchen-section-heading', 'Home & Kitchen', 'ঘর ও রান্নাঘর', 'text'],
     ['#beauty-section-heading', 'Beauty & Personal Care', 'সৌন্দর্য ও ব্যক্তিগত পরিচর্যা', 'text'],
-    ['#fashion-section-heading', 'Fashion & Accessories', 'ফ্যাশন ও অ্যাক্সেসরিজ', 'text'],
+    ['#fashion-section-heading', 'Games & Toys', 'গেমস ও খেলনা', 'text'],
     ['#baby-kids-section-heading', 'Baby & Kids', 'শিশু ও কিডস', 'text'],
     ['#category-filters-form #category-stock-filter option[value="all"]', 'All', 'সব', 'text'],
     ['#category-filters-form #category-stock-filter option[value="in-stock"]', 'In stock', 'স্টকে আছে', 'text'],
@@ -2231,9 +2145,9 @@
     ['#hero-slide-3 .hero-title', 'Upgrade Your Home & Kitchen', 'ঘর ও রান্নাঘর সাজান', 'text'],
     ['#hero-slide-3 .hero-description', 'Practical items to make your home more comfortable.', 'ঘরকে আরও আরামদায়ক করতে প্রয়োজনীয় পণ্য।', 'text'],
     ['#hero-slide-3 .hero-cta', 'Shop Home & Kitchen', 'ঘর ও রান্নাঘরের পণ্য কিনুন', 'text'],
-    ['#hero-slide-4 .hero-title', 'Fashion & Lifestyle', 'ফ্যাশন ও জীবনধারা', 'text'],
-    ['#hero-slide-4 .hero-description', 'Clothing and accessories for every day and every occasion.', 'প্রতিদিন ও বিশেষ উপলক্ষের পোশাক ও অ্যাক্সেসরিজ।', 'text'],
-    ['#hero-slide-4 .hero-cta', 'Shop Fashion', 'ফ্যাশন পণ্য কিনুন', 'text'],
+    ['#hero-slide-4 .hero-title', 'Games & Toys', 'গেমস ও খেলনা', 'text'],
+    ['#hero-slide-4 .hero-description', 'Discover fun games, creative toys and exciting picks for every age.', 'সব বয়সের জন্য মজার গেম, সৃজনশীল খেলনা ও দারুণ সব পছন্দ দেখুন।', 'text'],
+    ['#hero-slide-4 .hero-cta', 'Shop Games & Toys', 'গেমস ও খেলনা কিনুন', 'text'],
     ['#hero-slide-5 .hero-title', 'Beauty & Personal Care', 'সৌন্দর্য ও ব্যক্তিগত পরিচর্যা', 'text'],
     ['#hero-slide-5 .hero-cta', 'Shop Beauty', 'বিউটি পণ্য কিনুন', 'text'],
         ['#category-search-input', 'Search products', 'পণ্য খুঁজুন', 'placeholder'],
@@ -2351,7 +2265,7 @@
     'Smart devices, accessories and everyday gadgets.': 'স্মার্ট ডিভাইস, অ্যাক্সেসরিজ ও দৈনন্দিন গ্যাজেট।',
     'Cookware, storage and useful household items.': 'রান্নার সামগ্রী, সংরক্ষণ ও ঘরের প্রয়োজনীয় জিনিস।',
     'Skincare, grooming and personal care essentials.': 'ত্বকের যত্ন, গ্রুমিং ও ব্যক্তিগত পরিচর্যার প্রয়োজনীয় পণ্য।',
-    'Clothing, bags and accessories for every day.': 'প্রতিদিনের পোশাক, ব্যাগ ও অ্যাক্সেসরিজ।',
+    'Board games, puzzles and creative toys for every age.': 'বোর্ড গেম, পাজল ও সব বয়সের জন্য সৃজনশীল খেলনা।',
     'Everyday products for babies, toddlers and children.': 'শিশু ও বাচ্চাদের দৈনন্দিন প্রয়োজনীয় পণ্য।',
     'Recently added products.': 'সম্প্রতি যুক্ত হওয়া পণ্য।', 'Popular products, shown when real sales data is available.': 'প্রকৃত বিক্রির তথ্য থাকলে জনপ্রিয় পণ্য দেখানো হবে।',
     'New products will appear here soon.': 'নতুন পণ্য শিগগিরই এখানে দেখা যাবে।', 'Best sellers will appear here soon.': 'বেস্ট সেলার পণ্য শিগগিরই এখানে দেখা যাবে।',
@@ -2693,12 +2607,12 @@
 
   const PAGE_ID_TO_ROUTE = Object.keys(PAGE_ROUTES).reduce((acc, key) => { acc[PAGE_ROUTES[key]] = key; return acc; }, {});
 
-  const CATEGORY_BN = { electronics: 'ইলেকট্রনিক্স ও গ্যাজেটস', 'home-kitchen': 'ঘর ও রান্নাঘর', beauty: 'সৌন্দর্য ও ব্যক্তিগত পরিচর্যা', fashion: 'ফ্যাশন ও অ্যাক্সেসরিজ', 'baby-kids': 'শিশু ও কিডস' };
+  const CATEGORY_BN = { electronics: 'ইলেকট্রনিক্স ও গ্যাজেটস', 'home-kitchen': 'ঘর ও রান্নাঘর', beauty: 'সৌন্দর্য ও ব্যক্তিগত পরিচর্যা', fashion: 'গেমস ও খেলনা', 'baby-kids': 'শিশু ও কিডস' };
   const COLLECTION_BN = { all: 'সব পণ্য', 'flash-deals': 'ফ্ল্যাশ ডিল', 'all-deals': 'সব অফার', 'new-arrivals': 'নতুন পণ্য', 'best-sellers': 'বেস্ট সেলার' };
 
   function getCollectionInfo(id) {
     const cat = CATEGORIES.find(c => c.id === id);
-    if (cat) return { id, name: activeLanguage === 'bn' ? CATEGORY_BN[id] : cat.name, description: activeLanguage === 'bn' ? ({electronics:'স্মার্ট ডিভাইস, অ্যাক্সেসরিজ ও দৈনন্দিন গ্যাজেট।','home-kitchen':'রান্নার সামগ্রী, সংরক্ষণের পণ্য ও ঘরের প্রয়োজনীয় জিনিস।',beauty:'ত্বকের যত্ন, গ্রুমিং ও ব্যক্তিগত পরিচর্যার পণ্য।',fashion:'প্রতিদিনের পোশাক, ব্যাগ ও অ্যাক্সেসরিজ।','baby-kids':'শিশু ও বাচ্চাদের দৈনন্দিন প্রয়োজনীয় পণ্য।'}[id]) : cat.description, isCategory: true };
+    if (cat) return { id, name: activeLanguage === 'bn' ? CATEGORY_BN[id] : cat.name, description: activeLanguage === 'bn' ? ({electronics:'স্মার্ট ডিভাইস, অ্যাক্সেসরিজ ও দৈনন্দিন গ্যাজেট।','home-kitchen':'রান্নার সামগ্রী, সংরক্ষণের পণ্য ও ঘরের প্রয়োজনীয় জিনিস।',beauty:'ত্বকের যত্ন, গ্রুমিং ও ব্যক্তিগত পরিচর্যার পণ্য।',fashion:'বোর্ড গেম, পাজল ও সব বয়সের জন্য সৃজনশীল খেলনা।','baby-kids':'শিশু ও বাচ্চাদের দৈনন্দিন প্রয়োজনীয় পণ্য।'}[id]) : cat.description, isCategory: true };
     if (COLLECTIONS[id]) return { id, name: activeLanguage === 'bn' ? COLLECTION_BN[id] : COLLECTIONS[id].name, description: activeLanguage === 'bn' ? ({all:'প্রকাশিত সব পণ্য এক তালিকায়।','flash-deals':'নির্বাচিত পণ্যে সীমিত সময়ের অফার।','all-deals':'অফার বা কম দামের পণ্য।','new-arrivals':'নতুন যুক্ত হওয়া পণ্য।','best-sellers':'বেস্ট সেলার হিসেবে চিহ্নিত পণ্য।'}[id]) : COLLECTIONS[id].description, isCategory: false };
     return null;
   }
@@ -2781,7 +2695,7 @@
       electronics: 'ইলেকট্রনিক্স ও গ্যাজেট',
       'home-kitchen': 'হোম ও কিচেন',
       beauty: 'বিউটি ও পার্সোনাল কেয়ার',
-      fashion: 'ফ্যাশন ও অ্যাক্সেসরিজ',
+      fashion: 'গেমস ও খেলনা',
       'baby-kids': 'বেবি ও কিডস',
       all: 'সব পণ্য',
       'flash-deals': 'ফ্ল্যাশ ডিল',
@@ -2819,8 +2733,8 @@
     const isBn = activeLanguage === 'bn';
     if (route.name === 'home') {
       return isBn
-        ? 'ShobPaben.online-এ বাংলাদেশে অনলাইনে ইলেকট্রনিক্স, হোম ও কিচেন, বিউটি, ফ্যাশন এবং দৈনন্দিন প্রয়োজনীয় পণ্য কিনুন।'
-        : 'Shop electronics, home and kitchen essentials, beauty and personal care, fashion and accessories, and baby and kids products online in Bangladesh with ShobPaben.online.';
+        ? 'ShobPaben.online-এ বাংলাদেশে অনলাইনে ইলেকট্রনিক্স, হোম ও কিচেন, বিউটি, গেমস ও খেলনা এবং দৈনন্দিন প্রয়োজনীয় পণ্য কিনুন।'
+        : 'Shop electronics, home and kitchen essentials, beauty and personal care, Games & Toys, and baby and kids products online in Bangladesh with ShobPaben.online.';
     }
     if (route.name === 'product') {
       const p = PUBLIC_BY_ID.get(route.productId);
@@ -2837,7 +2751,7 @@
         electronics: 'Shop electronics and gadgets online in Bangladesh.',
         'home-kitchen': 'Browse home and kitchen essentials online in Bangladesh.',
         beauty: 'Shop beauty and personal care products online in Bangladesh.',
-        fashion: 'Browse fashion, clothing and accessories online in Bangladesh.',
+        fashion: 'Browse Games & Toys online in Bangladesh.',
         'baby-kids': 'Shop baby and kids products online in Bangladesh.',
         all: 'Browse all products at ShobPaben.online.',
         'flash-deals': 'Discover current featured deals at ShobPaben.online.',
@@ -2849,7 +2763,7 @@
         electronics: 'বাংলাদেশে অনলাইনে ইলেকট্রনিক্স ও গ্যাজেট কিনুন।',
         'home-kitchen': 'অনলাইনে হোম ও কিচেনের প্রয়োজনীয় পণ্য দেখুন।',
         beauty: 'বিউটি ও পার্সোনাল কেয়ার পণ্য অনলাইনে কিনুন।',
-        fashion: 'ফ্যাশন, পোশাক ও অ্যাক্সেসরিজ দেখুন।',
+        fashion: 'গেমস ও খেলনা দেখুন।',
         'baby-kids': 'বেবি ও কিডসের পণ্য অনলাইনে কিনুন।',
         all: 'ShobPaben.online-এ সব পণ্য দেখুন।',
         'flash-deals': 'ShobPaben.online-এর নির্বাচিত ডিল দেখুন।',
