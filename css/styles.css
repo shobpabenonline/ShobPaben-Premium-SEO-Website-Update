@@ -845,6 +845,7 @@ legend { padding: 0; font-weight: 650; }
 @media (max-width: 640px) {
   .site-logo-image {
     width: 145px;
+    max-height: 52px; /* keeps the sticky mobile header compact */
   }
 }
 
@@ -852,6 +853,7 @@ legend { padding: 0; font-weight: 650; }
 @media (max-width: 400px) {
   .site-logo-image {
     width: 128px;
+    max-height: 46px;
   }
 }
 
@@ -1549,8 +1551,11 @@ legend { padding: 0; font-weight: 650; }
   .invoice-table thead th { font-size: 0.6875rem; letter-spacing: 0.02em; }
   .confirmation-actions > * { flex: 1 1 100%; }
 
-  .floating-whatsapp-button { width: 52px; height: 52px; }
-  .floating-whatsapp-button .icon { width: 26px; height: 26px; }
+  .floating-whatsapp-button { width: 48px; height: 48px; right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
+  .floating-whatsapp-button .icon { width: 24px; height: 24px; }
+  .detail-main-image { max-height: min(78vw, 420px); }
+  .product-name { overflow-wrap: anywhere; }
+  .price-current, .price-original { white-space: nowrap; }
 
   #newsletter-form { grid-template-columns: minmax(0, 1fr); grid-template-areas: "lab" "inp" "con" "btn"; }
   #newsletter-submit { width: 100%; }

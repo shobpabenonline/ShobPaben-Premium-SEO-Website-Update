@@ -54,7 +54,7 @@
     // (You may alternatively fill data-end-time="" on #flash-deals-timer in the HTML.)
     flashDealEndTime: '',
 
-    pageSize: 30,                       // products shown per "Load More" step on listing pages
+    pageSize: 70,                       // products shown per "Load More" step on listing pages
     home: { flashDeals: 5, newArrivals: 10, bestSellers: 10, perCategory: 5 },
     relatedProducts: 4,
     lowStockThreshold: 5,               // "Only N left" is shown at or below this stock
@@ -159,7 +159,7 @@
 
      price = বিক্রয়মূল্য; originalPrice = আগের মূল্য অথবা null। valid discount
      হলে badge স্বয়ংক্রিয়ভাবে হিসাব হয়। stock শূন্য হলে পণ্য sold out-ই থাকবে।
-     published:false করলে পণ্যটি storefront-এ দেখা যাবে না। ফাঁকা 70-slot-গুলো
+     published:false করলে পণ্যটি storefront-এ দেখা যাবে না। অনুপস্থিত slot-গুলো
      unpublished থাকবে। নিচের বিদ্যমান sample/demo তথ্য source ফাইল থেকে রাখা হয়েছে;
      এগুলোকে যাচাইকৃত বাস্তব ব্যবসায়িক তথ্য ধরে নেবেন না।
      ====================================================================== */
@@ -454,6 +454,369 @@
         "originalPrice": null,
         "stock": 42,
         "description": "Multi-plug travel adapter for use abroad.",
+        "published": true
+      },
+      // SAMPLE DATA: Added records below are illustrative, not verified business facts.
+      // Owner must verify names, prices, stock and descriptions before real sales.
+      // Images use existing <product-id>.jpg paths and fallback; no image files were created.
+      {
+        "id": "electronics-031",
+        "name": "USB-C Card Reader",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "USB-C Card Reader for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-032",
+        "name": "Laptop Privacy Cover",
+        "price": 150,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Laptop Privacy Cover for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-033",
+        "name": "Phone Camera Lens Kit",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Phone Camera Lens Kit for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-034",
+        "name": "Desktop Microphone",
+        "price": 1490,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Desktop Microphone for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-035",
+        "name": "USB Desk Fan",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "USB Desk Fan for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-036",
+        "name": "Cable Organizer Clips",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Cable Organizer Clips for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-037",
+        "name": "Ethernet Cable",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Ethernet Cable for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-038",
+        "name": "Portable SSD Enclosure",
+        "price": 1290,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Portable SSD Enclosure for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-039",
+        "name": "Tablet Display Stand",
+        "price": 550,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Tablet Display Stand for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-040",
+        "name": "Digital Kitchen Timer",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Digital Kitchen Timer for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-041",
+        "name": "Bluetooth Audio Receiver",
+        "price": 750,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Bluetooth Audio Receiver for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-042",
+        "name": "USB-C to HDMI Adapter",
+        "price": 1190,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "USB-C to HDMI Adapter for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-043",
+        "name": "Laptop Sleeve",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Laptop Sleeve for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-044",
+        "name": "Monitor Riser",
+        "price": 990,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Monitor Riser for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-045",
+        "name": "Phone Finger Grip",
+        "price": 180,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Phone Finger Grip for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-046",
+        "name": "Rechargeable Book Light",
+        "price": 490,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Rechargeable Book Light for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-047",
+        "name": "Gaming Mouse Pad",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Gaming Mouse Pad for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-048",
+        "name": "USB Extension Cable",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "USB Extension Cable for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-049",
+        "name": "Desktop Cable Management Box",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Desktop Cable Management Box for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-050",
+        "name": "Smart Plug",
+        "price": 990,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Smart Plug for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-051",
+        "name": "Portable FM Radio",
+        "price": 850,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Portable FM Radio for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-052",
+        "name": "Digital Voice Recorder",
+        "price": 2490,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Digital Voice Recorder for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-053",
+        "name": "Mini Projector Stand",
+        "price": 890,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Mini Projector Stand for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-054",
+        "name": "Microphone Pop Filter",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Microphone Pop Filter for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-055",
+        "name": "Headphone Storage Stand",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Headphone Storage Stand for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-056",
+        "name": "USB-C Earphone Adapter",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "USB-C Earphone Adapter for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-057",
+        "name": "Screen Cleaning Kit",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Screen Cleaning Kit for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-058",
+        "name": "Rechargeable Bike Light",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Rechargeable Bike Light for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-059",
+        "name": "Phone Waterproof Pouch",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Phone Waterproof Pouch for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-060",
+        "name": "Laptop Keyboard Cover",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Laptop Keyboard Cover for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-061",
+        "name": "Webcam Privacy Shutter Set",
+        "price": 120,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Webcam Privacy Shutter Set for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-062",
+        "name": "USB Reading Light",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "USB Reading Light for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-063",
+        "name": "Portable Keyboard Carry Case",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Portable Keyboard Carry Case for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-064",
+        "name": "Memory Card Storage Case",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Memory Card Storage Case for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-065",
+        "name": "Audio Splitter Cable",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Audio Splitter Cable for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-066",
+        "name": "USB Cable Tester",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "USB Cable Tester for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-067",
+        "name": "Rechargeable Motion Sensor Light",
+        "price": 890,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Rechargeable Motion Sensor Light for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-068",
+        "name": "Digital Luggage Scale",
+        "price": 550,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Digital Luggage Scale for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-069",
+        "name": "Phone Charging Dock",
+        "price": 750,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Phone Charging Dock for everyday device use and organization.",
+        "published": true
+      },
+      {
+        "id": "electronics-070",
+        "name": "Mini Desktop Vacuum",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Mini Desktop Vacuum for everyday device use and organization.",
         "published": true
       }
     ],
@@ -755,6 +1118,369 @@
         "stock": 0,
         "description": "Sturdy plastic bucket with matching mug.",
         "published": true
+      },
+      // SAMPLE DATA: Added records below are illustrative, not verified business facts.
+      // Owner must verify names, prices, stock and descriptions before real sales.
+      // Images use existing <product-id>.jpg paths and fallback; no image files were created.
+      {
+        "id": "home-kitchen-031",
+        "name": "Silicone Spatula Set",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Silicone Spatula Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-032",
+        "name": "Vegetable Peeler",
+        "price": 150,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Vegetable Peeler for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-033",
+        "name": "Measuring Cup Set",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Measuring Cup Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-034",
+        "name": "Measuring Spoon Set",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Measuring Spoon Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-035",
+        "name": "Manual Vegetable Chopper",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Manual Vegetable Chopper for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-036",
+        "name": "Salad Spinner",
+        "price": 890,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Salad Spinner for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-037",
+        "name": "Rolling Pin",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Rolling Pin for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-038",
+        "name": "Silicone Baking Mat",
+        "price": 550,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Silicone Baking Mat for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-039",
+        "name": "Oven Mitt Pair",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Oven Mitt Pair for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-040",
+        "name": "Kitchen Apron",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Kitchen Apron for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-041",
+        "name": "Stainless Steel Colander",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Stainless Steel Colander for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-042",
+        "name": "Mixing Bowl Set",
+        "price": 990,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Mixing Bowl Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-043",
+        "name": "Soup Ladle",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Soup Ladle for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-044",
+        "name": "Kitchen Tongs",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Kitchen Tongs for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-045",
+        "name": "Potato Masher",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Potato Masher for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-046",
+        "name": "Garlic Press",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Garlic Press for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-047",
+        "name": "Citrus Juicer",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Citrus Juicer for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-048",
+        "name": "Ice Cube Tray Set",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Ice Cube Tray Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-049",
+        "name": "Reusable Food Cover Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Reusable Food Cover Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-050",
+        "name": "Oil Dispenser Bottle",
+        "price": 490,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Oil Dispenser Bottle for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-051",
+        "name": "Butter Dish",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Butter Dish for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-052",
+        "name": "Bread Storage Box",
+        "price": 990,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Bread Storage Box for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-053",
+        "name": "Fruit Basket",
+        "price": 550,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Fruit Basket for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-054",
+        "name": "Kitchen Drawer Divider",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Kitchen Drawer Divider for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-055",
+        "name": "Sink Caddy",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Sink Caddy for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-056",
+        "name": "Soap Dispenser",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Soap Dispenser for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-057",
+        "name": "Toilet Brush with Holder",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Toilet Brush with Holder for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-058",
+        "name": "Shower Curtain",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Shower Curtain for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-059",
+        "name": "Bathroom Shelf",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Bathroom Shelf for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-060",
+        "name": "Laundry Mesh Bag Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Laundry Mesh Bag Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-061",
+        "name": "Lint Roller",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Lint Roller for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-062",
+        "name": "Clothes Peg Set",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Clothes Peg Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-063",
+        "name": "Ironing Board Cover",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Ironing Board Cover for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-064",
+        "name": "Cushion Cover Set",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Cushion Cover Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-065",
+        "name": "Curtain Tieback Pair",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Curtain Tieback Pair for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-066",
+        "name": "Underbed Storage Bag",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Underbed Storage Bag for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-067",
+        "name": "Reusable Shopping Bag Set",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Reusable Shopping Bag Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-068",
+        "name": "Watering Can",
+        "price": 550,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Watering Can for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-069",
+        "name": "Plant Pot Set",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Plant Pot Set for everyday home and kitchen use.",
+        "published": true
+      },
+      {
+        "id": "home-kitchen-070",
+        "name": "Handheld Dustpan and Brush",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Handheld Dustpan and Brush for everyday home and kitchen use.",
+        "published": true
       }
     ],
     // Beauty & Personal Care — existing product IDs and data
@@ -1034,9 +1760,372 @@
         "stock": 0,
         "description": "Light fragrance mist for daily wear.",
         "published": true
+      },
+      // SAMPLE DATA: Added records below are illustrative, not verified business facts.
+      // Owner must verify names, prices, stock and descriptions before real sales.
+      // Images use existing <product-id>.jpg paths and fallback; no image files were created.
+      {
+        "id": "beauty-031",
+        "name": "Makeup Sponge Set",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Makeup Sponge Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-032",
+        "name": "Travel Cosmetic Pouch",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Travel Cosmetic Pouch for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-033",
+        "name": "Vanity Mirror",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Vanity Mirror for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-034",
+        "name": "Compact Pocket Mirror",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Compact Pocket Mirror for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-035",
+        "name": "Reusable Makeup Remover Pads",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Reusable Makeup Remover Pads for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-036",
+        "name": "Facial Cleansing Brush",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Facial Cleansing Brush for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-037",
+        "name": "Silicone Face Mask Applicator",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Silicone Face Mask Applicator for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-038",
+        "name": "Hair Detangling Brush",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Hair Detangling Brush for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-039",
+        "name": "Round Styling Brush",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Round Styling Brush for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-040",
+        "name": "Scalp Massage Brush",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Scalp Massage Brush for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-041",
+        "name": "Satin Hair Scrunchie Set",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Satin Hair Scrunchie Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-042",
+        "name": "Spa Headband",
+        "price": 220,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Spa Headband for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-043",
+        "name": "Shower Cap Set",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Shower Cap Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-044",
+        "name": "Hair Roller Set",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Hair Roller Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-045",
+        "name": "Heatless Curling Ribbon",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Heatless Curling Ribbon for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-046",
+        "name": "Hair Sectioning Clip Set",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Hair Sectioning Clip Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-047",
+        "name": "Spray Bottle",
+        "price": 150,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Spray Bottle for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-048",
+        "name": "Travel Toiletry Bottle Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Travel Toiletry Bottle Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-049",
+        "name": "Soap Travel Case",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Soap Travel Case for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-050",
+        "name": "Exfoliating Bath Glove",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Exfoliating Bath Glove for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-051",
+        "name": "Body Scrub Brush",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Body Scrub Brush for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-052",
+        "name": "Bath Sponge Set",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Bath Sponge Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-053",
+        "name": "Back Scrubber Strap",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Back Scrubber Strap for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-054",
+        "name": "Pumice Foot Stone",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Pumice Foot Stone for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-055",
+        "name": "Foot File",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Foot File for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-056",
+        "name": "Pedicure Toe Separator Set",
+        "price": 150,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Pedicure Toe Separator Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-057",
+        "name": "Nail Buffer Block Set",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Nail Buffer Block Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-058",
+        "name": "Glass Nail File",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Glass Nail File for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-059",
+        "name": "Cuticle Pusher",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Cuticle Pusher for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-060",
+        "name": "Nail Art Brush Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Nail Art Brush Set for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-061",
+        "name": "Makeup Brush Cleaning Mat",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Makeup Brush Cleaning Mat for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-062",
+        "name": "Makeup Brush Holder",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Makeup Brush Holder for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-063",
+        "name": "Lipstick Organizer",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Lipstick Organizer for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-064",
+        "name": "Cotton Pad Dispenser",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Cotton Pad Dispenser for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-065",
+        "name": "Eyebrow Grooming Kit",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Eyebrow Grooming Kit for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-066",
+        "name": "Eyelash Curler",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Eyelash Curler for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-067",
+        "name": "Precision Tweezers",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Precision Tweezers for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-068",
+        "name": "Perfume Travel Atomizer",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Perfume Travel Atomizer for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-069",
+        "name": "Grooming Scissors",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Grooming Scissors for everyday personal care and organization.",
+        "published": true
+      },
+      {
+        "id": "beauty-070",
+        "name": "Toiletry Organizer Basket",
+        "price": 550,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Toiletry Organizer Basket for everyday personal care and organization.",
+        "published": true
       }
     ],
-    // Games & Toys — 30 published product records. Legacy IDs are retained for compatibility.
+    // Games & Toys — existing product records. Legacy IDs are retained for compatibility.
     'fashion': [
       {
         "id": "fashion-001",
@@ -1368,6 +2457,369 @@
         "published": true,
         "isNewArrival": true,
         "isFeatured": true
+      },
+      // SAMPLE DATA: Added records below are illustrative, not verified business facts.
+      // Owner must verify names, prices, stock and descriptions before real sales.
+      // Images use existing <product-id>.jpg paths and fallback; no image files were created.
+      {
+        "id": "fashion-031",
+        "name": "Checkers Board Set",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Checkers Board Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-032",
+        "name": "Snakes and Ladders Board Game",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Snakes and Ladders Board Game for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-033",
+        "name": "Ludo Board Game",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Ludo Board Game for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-034",
+        "name": "Travel Backgammon Set",
+        "price": 750,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Travel Backgammon Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-035",
+        "name": "Tangram Puzzle",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Tangram Puzzle for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-036",
+        "name": "Wooden Balance Game",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Wooden Balance Game for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-037",
+        "name": "Memory Matching Cards",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Memory Matching Cards for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-038",
+        "name": "Picture Bingo Game",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Picture Bingo Game for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-039",
+        "name": "Storytelling Card Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Storytelling Card Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-040",
+        "name": "Puzzle Cube (2×2)",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Puzzle Cube (2×2) for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-041",
+        "name": "Puzzle Cube (4×4)",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Puzzle Cube (4×4) for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-042",
+        "name": "Sliding Number Puzzle",
+        "price": 190,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Sliding Number Puzzle for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-043",
+        "name": "Maze Puzzle Ball",
+        "price": 550,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Maze Puzzle Ball for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-044",
+        "name": "Wooden Marble Run",
+        "price": 1490,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Wooden Marble Run for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-045",
+        "name": "Toy Bowling Set",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Toy Bowling Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-046",
+        "name": "Ring Toss Game",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Ring Toss Game for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-047",
+        "name": "Bean Bag Toss Set",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Bean Bag Toss Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-048",
+        "name": "Foam Glider Set",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Foam Glider Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-049",
+        "name": "Toy Train Set",
+        "price": 1290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Toy Train Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-050",
+        "name": "Toy Farm Animal Figures",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Toy Farm Animal Figures for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-051",
+        "name": "Toy Dinosaur Figure Set",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Toy Dinosaur Figure Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-052",
+        "name": "Toy Ocean Animal Set",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Toy Ocean Animal Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-053",
+        "name": "Toy Tool Bench Set",
+        "price": 1490,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Toy Tool Bench Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-054",
+        "name": "Pretend Grocery Play Set",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Pretend Grocery Play Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-055",
+        "name": "Pretend Cash Register",
+        "price": 990,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Pretend Cash Register for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-056",
+        "name": "Puppet Theatre Set",
+        "price": 1190,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Puppet Theatre Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-057",
+        "name": "Hand Puppet Set",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Hand Puppet Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-058",
+        "name": "Finger Puppet Set",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Finger Puppet Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-059",
+        "name": "Toy Telescope",
+        "price": 750,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Toy Telescope for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-060",
+        "name": "Toy Binoculars",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Toy Binoculars for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-061",
+        "name": "Kids Drum Play Set",
+        "price": 990,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Kids Drum Play Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-062",
+        "name": "Toy Xylophone",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Toy Xylophone for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-063",
+        "name": "Toy Tambourine",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Toy Tambourine for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-064",
+        "name": "Clay Modeling Tool Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Clay Modeling Tool Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-065",
+        "name": "Origami Paper Kit",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Origami Paper Kit for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-066",
+        "name": "Bead Craft Kit",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Bead Craft Kit for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-067",
+        "name": "Sand Play Bucket Set",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Sand Play Bucket Set for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-068",
+        "name": "Toy Fishing Game",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Toy Fishing Game for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-069",
+        "name": "Puzzle Storage Mat",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Puzzle Storage Mat for everyday play and recreation.",
+        "published": true
+      },
+      {
+        "id": "fashion-070",
+        "name": "Card Game Holder Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Card Game Holder Set for everyday play and recreation.",
+        "published": true
       }
     ],
     // Baby & Kids — existing product IDs and data
@@ -1695,6 +3147,360 @@
         "originalPrice": null,
         "stock": 45,
         "description": "Soft-bristle brush and comb set.",
+        "published": true
+      },
+      // SAMPLE DATA: Added records below are illustrative, not verified business facts.
+      // Owner must verify names, prices, stock and descriptions before real sales.
+      // Images use existing <product-id>.jpg paths and fallback; no image files were created.
+      {
+        "id": "baby-kids-032",
+        "name": "Baby Changing Mat",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Baby Changing Mat for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-033",
+        "name": "Diaper Storage Caddy",
+        "price": 890,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Diaper Storage Caddy for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-034",
+        "name": "Baby Laundry Bag",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Baby Laundry Bag for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-035",
+        "name": "Baby Washcloth Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Baby Washcloth Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-036",
+        "name": "Baby Burp Cloth Set",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Baby Burp Cloth Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-037",
+        "name": "Cotton Swaddle Wrap",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Cotton Swaddle Wrap for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-038",
+        "name": "Baby Fitted Cot Sheet",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Baby Fitted Cot Sheet for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-039",
+        "name": "Baby Clothing Hanger Set",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Baby Clothing Hanger Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-040",
+        "name": "Baby Wardrobe Divider Set",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Baby Wardrobe Divider Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-041",
+        "name": "Baby Nail Care Kit",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Baby Nail Care Kit for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-042",
+        "name": "Baby Bath Rinse Cup",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Baby Bath Rinse Cup for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-043",
+        "name": "Bath Toy Organizer",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Bath Toy Organizer for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-044",
+        "name": "Feeding Bottle Cleaning Brush",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Feeding Bottle Cleaning Brush for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-045",
+        "name": "Feeding Bottle Drying Rack",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Feeding Bottle Drying Rack for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-046",
+        "name": "Baby Food Storage Containers",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Baby Food Storage Containers for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-047",
+        "name": "Toddler Training Spoon Set",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Toddler Training Spoon Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-048",
+        "name": "Toddler Divided Plate",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Toddler Divided Plate for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-049",
+        "name": "Silicone Feeding Bowl",
+        "price": 550,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Silicone Feeding Bowl for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-050",
+        "name": "Snack Cup with Lid",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Snack Cup with Lid for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-051",
+        "name": "Baby Stroller Organizer",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Baby Stroller Organizer for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-052",
+        "name": "Stroller Rain Cover",
+        "price": 890,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Stroller Rain Cover for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-053",
+        "name": "Pram Storage Hook Set",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Pram Storage Hook Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-054",
+        "name": "Kids Travel Neck Pillow",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Kids Travel Neck Pillow for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-055",
+        "name": "Kids Sun Hat",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Kids Sun Hat for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-056",
+        "name": "Kids Cotton Shorts",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Kids Cotton Shorts for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-057",
+        "name": "Kids Pajama Set",
+        "price": 790,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Kids Pajama Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-058",
+        "name": "Kids Sock Set",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Kids Sock Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-059",
+        "name": "Kids Slippers",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Kids Slippers for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-060",
+        "name": "Kids Belt",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Kids Belt for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-061",
+        "name": "Kids Hairband Set",
+        "price": 250,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Kids Hairband Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-062",
+        "name": "Kids Stationery Organizer",
+        "price": 390,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Kids Stationery Organizer for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-063",
+        "name": "Kids Drawing Apron",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Kids Drawing Apron for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-064",
+        "name": "Kids Art Paper Pad",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Kids Art Paper Pad for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-065",
+        "name": "Kids Storybook Set",
+        "price": 690,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Kids Storybook Set for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-066",
+        "name": "Kids Bookends",
+        "price": 450,
+        "originalPrice": null,
+        "stock": 25,
+        "description": "Kids Bookends for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-067",
+        "name": "Kids Backpack Rain Cover",
+        "price": 350,
+        "originalPrice": null,
+        "stock": 30,
+        "description": "Kids Backpack Rain Cover for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-068",
+        "name": "Kids Lunch Bag",
+        "price": 590,
+        "originalPrice": null,
+        "stock": 35,
+        "description": "Kids Lunch Bag for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-069",
+        "name": "Kids Shoe Storage Bag",
+        "price": 290,
+        "originalPrice": null,
+        "stock": 40,
+        "description": "Kids Shoe Storage Bag for everyday baby or child care and organization.",
+        "published": true
+      },
+      {
+        "id": "baby-kids-070",
+        "name": "Kids Laundry Basket",
+        "price": 650,
+        "originalPrice": null,
+        "stock": 20,
+        "description": "Kids Laundry Basket for everyday baby or child care and organization.",
         "published": true
       }
     ]
@@ -4610,7 +6416,7 @@
     }
 
     state.isPlacingOrder = true;
-    if (dom.placeOrder) dom.placeOrder.disabled = true;
+    if (dom.placeOrder) { dom.placeOrder.disabled = true; dom.placeOrder.setAttribute('aria-busy', 'true'); }
 
     try {
       const totals = calculateTotals(state.cart.lines, state.cart.couponCode, values.district);
@@ -4669,7 +6475,7 @@
         : 'We could not confirm that your order reached the Google Sheet. Check your connection and try again; the same Order ID will be reused if checkout details are unchanged.', { type: 'error', duration: 9000 });
     } finally {
       state.isPlacingOrder = false;
-      if (dom.placeOrder) dom.placeOrder.disabled = false;
+      if (dom.placeOrder) { dom.placeOrder.disabled = false; dom.placeOrder.removeAttribute('aria-busy'); }
     }
   }
 
