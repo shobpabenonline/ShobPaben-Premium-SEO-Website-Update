@@ -816,6 +816,46 @@ legend { padding: 0; font-weight: 650; }
 .hero-dot:hover::before { background: var(--text-muted); }
 .hero-dot.is-active::before, .hero-dot[aria-current="true"]::before { width: 24px; background: var(--brand); }
 
+
+/* Header Brand Logo */
+.site-logo {
+  grid-area: logo;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-width: 0;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.site-logo:hover {
+  text-decoration: none;
+}
+
+.site-logo-image {
+  display: block;
+  width: 160px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Tablet */
+@media (max-width: 640px) {
+  .site-logo-image {
+    width: 145px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 400px) {
+  .site-logo-image {
+    width: 128px;
+  }
+}
+
+
 /* 9. CATEGORIES, PRODUCT CARDS, GRIDS ----------------------------------- */
 .category-card-list { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-4); list-style: none; }
 .category-card {
