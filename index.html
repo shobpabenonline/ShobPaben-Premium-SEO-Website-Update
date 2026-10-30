@@ -255,50 +255,182 @@
       </div>
 
       <!-- 8. SHOP BY CATEGORY -->
-      <section class="shop-by-category" id="shop-by-category" aria-labelledby="shop-by-category-heading">
-        <div class="section-header">
-          <h2 id="shop-by-category-heading" data-i18n="text.shop-by-category-0eb46573">Shop by Category</h2>
-          <p class="section-subtitle" data-i18n="text.browse-our-five-main-categories-295866e0">Browse our five main categories.</p>
-        </div>
-        <ul class="category-card-list">
-          <li class="category-card" data-category="electronics" data-target="category-page">
-            <img class="category-image" src="assets/images/cetagores/icon1.png" alt="Electronics and gadgets category" width="400" height="300" loading="lazy" data-i18n-alt="alt.electronics-and-gadgets-category-48eda6a8">
-            <h3 class="category-title" data-i18n="text.electronics-amp-gadgets-9962df5c">Electronics &amp; Gadgets</h3>
-            <p class="category-description" data-i18n="text.devices-accessories-and-smart-gadgets-914081f1">Devices, accessories and smart gadgets.</p>
-            <p class="category-count"><span data-category-count="electronics">0</span> <span data-i18n="text.products-fbdc4f23">products</span></p>
-            <a class="category-action" href="#category-page" data-action="open-category" data-category="electronics" data-i18n="text.view-category-38de8ecd">View Category</a>
-          </li>
-          <li class="category-card" data-category="home-kitchen" data-target="category-page">
-            <img class="category-image" src="assets/images/cetagores/icon2.png" alt="Home and kitchen category" width="400" height="300" loading="lazy" data-i18n-alt="alt.home-and-kitchen-category-3a6e15ab">
-            <h3 class="category-title" data-i18n="text.home-amp-kitchen-c2b8dfb6">Home &amp; Kitchen</h3>
-            <p class="category-description" data-i18n="text.cookware-storage-and-home-essentials-9ae25327">Cookware, storage and home essentials.</p>
-            <p class="category-count"><span data-category-count="home-kitchen">0</span> <span data-i18n="text.products-fbdc4f23">products</span></p>
-            <a class="category-action" href="#category-page" data-action="open-category" data-category="home-kitchen" data-i18n="text.view-category-38de8ecd">View Category</a>
-          </li>
-          <li class="category-card" data-category="beauty" data-target="category-page">
-            <img class="category-image" src="assets/images/cetagores/icon3.png" alt="Beauty and personal care category" width="400" height="300" loading="lazy" data-i18n-alt="alt.beauty-and-personal-care-category-50ee5695">
-            <h3 class="category-title" data-i18n="text.beauty-amp-personal-care-58c7dc36">Beauty &amp; Personal Care</h3>
-            <p class="category-description" data-i18n="text.skincare-grooming-and-daily-care-products-6cbbd27d">Skincare, grooming and daily care products.</p>
-            <p class="category-count"><span data-category-count="beauty">0</span> <span data-i18n="text.products-fbdc4f23">products</span></p>
-            <a class="category-action" href="#category-page" data-action="open-category" data-category="beauty" data-i18n="text.view-category-38de8ecd">View Category</a>
-          </li>
-          <li class="category-card" data-category="fashion" data-target="category-page">
-            <img class="category-image" src="assets/images/cetagores/icon4.png" alt="Games and toys category" width="400" height="300" loading="lazy" data-i18n-alt="alt.games-and-toys-category">
-            <h3 class="category-title" data-i18n="text.games-amp-toys">Games &amp; Toys</h3>
-            <p class="category-description" data-i18n="text.games-and-toys-description">Board games, puzzles and creative toys for every age.</p>
-            <p class="category-count"><span data-category-count="fashion">0</span> <span data-i18n="text.products-fbdc4f23">products</span></p>
-            <a class="category-action" href="#category-page" data-action="open-category" data-category="fashion" data-i18n="text.view-category-38de8ecd">View Category</a>
-          </li>
-          <li class="category-card" data-category="baby-kids" data-target="category-page">
-            <img class="category-image" src="assets/images/cetagores/icon5.png" alt="Baby and kids category" width="400" height="300" loading="lazy" data-i18n-alt="alt.baby-and-kids-category-6c87fe81">
-            <h3 class="category-title" data-i18n="text.baby-amp-kids-c6448ced">Baby &amp; Kids</h3>
-            <p class="category-description" data-i18n="text.products-for-babies-toddlers-and-children-ba02e4ed">Products for babies, toddlers and children.</p>
-            <p class="category-count"><span data-category-count="baby-kids">0</span> <span data-i18n="text.products-fbdc4f23">products</span></p>
-            <a class="category-action" href="#category-page" data-action="open-category" data-category="baby-kids" data-i18n="text.view-category-38de8ecd">View Category</a>
-          </li>
-        </ul>
-        <a class="view-all-category" id="view-all-category" href="#shop-by-category" data-action="open-category" data-category="all" data-i18n="text.view-all-categories-c8a1edf9">View All Category</a>
-      </section>
+<section class="shop-by-category" id="shop-by-category" aria-labelledby="shop-by-category-heading">
+
+  <div class="section-header">
+    <h2 id="shop-by-category-heading" data-i18n="text.shop-by-category-0eb46573">
+      Shop by Category
+    </h2>
+    <p class="section-subtitle" data-i18n="text.browse-our-five-main-categories-295866e0">
+      Browse our five main categories.
+    </p>
+  </div>
+
+  <ul class="category-card-list">
+
+    <!-- Electronics & Gadgets -->
+    <li class="category-card" data-category="electronics" data-target="category-page">
+      <img
+        class="category-image"
+        src="assets/images/cetagores/icon1.png"
+        alt="Electronics and gadgets category"
+        width="400"
+        height="300"
+        loading="lazy"
+        data-i18n-alt="alt.electronics-and-gadgets-category-48eda6a8"
+      >
+      <h3 class="category-title" data-i18n="text.electronics-amp-gadgets-9962df5c">
+        Electronics &amp; Gadgets
+      </h3>
+      <p class="category-description" data-i18n="text.devices-accessories-and-smart-gadgets-914081f1">
+        Devices, accessories and smart gadgets.
+      </p>
+      <p class="category-count">
+        <span data-category-count="electronics">0</span>
+        <span data-i18n="text.products-fbdc4f23">products</span>
+      </p>
+      <a
+        class="category-action"
+        href="#category-page"
+        data-action="open-category"
+        data-category="electronics"
+        data-i18n="text.view-category-38de8ecd"
+      >View Category</a>
+    </li>
+
+    <!-- Home & Kitchen -->
+    <li class="category-card" data-category="home-kitchen" data-target="category-page">
+      <img
+        class="category-image"
+        src="assets/images/cetagores/icon2.png"
+        alt="Home and kitchen category"
+        width="400"
+        height="300"
+        loading="lazy"
+        data-i18n-alt="alt.home-and-kitchen-category-3a6e15ab"
+      >
+      <h3 class="category-title" data-i18n="text.home-amp-kitchen-c2b8dfb6">
+        Home &amp; Kitchen
+      </h3>
+      <p class="category-description" data-i18n="text.cookware-storage-and-home-essentials-9ae25327">
+        Cookware, storage and home essentials.
+      </p>
+      <p class="category-count">
+        <span data-category-count="home-kitchen">0</span>
+        <span data-i18n="text.products-fbdc4f23">products</span>
+      </p>
+      <a
+        class="category-action"
+        href="#category-page"
+        data-action="open-category"
+        data-category="home-kitchen"
+        data-i18n="text.view-category-38de8ecd"
+      >View Category</a>
+    </li>
+
+    <!-- Beauty & Personal Care -->
+    <li class="category-card" data-category="beauty" data-target="category-page">
+      <img
+        class="category-image"
+        src="assets/images/cetagores/icon3.png"
+        alt="Beauty and personal care category"
+        width="400"
+        height="300"
+        loading="lazy"
+        data-i18n-alt="alt.beauty-and-personal-care-category-50ee5695"
+      >
+      <h3 class="category-title" data-i18n="text.beauty-amp-personal-care-58c7dc36">
+        Beauty &amp; Personal Care
+      </h3>
+      <p class="category-description" data-i18n="text.skincare-grooming-and-daily-care-products-6cbbd27d">
+        Skincare, grooming and daily care products.
+      </p>
+      <p class="category-count">
+        <span data-category-count="beauty">0</span>
+        <span data-i18n="text.products-fbdc4f23">products</span>
+      </p>
+      <a
+        class="category-action"
+        href="#category-page"
+        data-action="open-category"
+        data-category="beauty"
+        data-i18n="text.view-category-38de8ecd"
+      >View Category</a>
+    </li>
+
+    <!-- Games & Toys -->
+    <li class="category-card" data-category="fashion" data-target="category-page">
+      <img
+        class="category-image"
+        src="assets/images/cetagores/icon4.png"
+        alt="Games and toys category"
+        width="400"
+        height="300"
+        loading="lazy"
+        data-i18n-alt="alt.games-and-toys-category"
+      >
+      <h3 class="category-title" data-i18n="text.games-amp-toys">
+        Games &amp; Toys
+      </h3>
+      <p class="category-description" data-i18n="text.games-and-toys-description">
+        Board games, puzzles and creative toys for every age.
+      </p>
+      <p class="category-count">
+        <span data-category-count="fashion">0</span>
+        <span data-i18n="text.products-fbdc4f23">products</span>
+      </p>
+      <a
+        class="category-action"
+        href="#category-page"
+        data-action="open-category"
+        data-category="fashion"
+        data-i18n="text.view-category-38de8ecd"
+      >View Category</a>
+    </li>
+
+    <!-- Baby & Kids -->
+    <li class="category-card" data-category="baby-kids" data-target="category-page">
+      <img
+        class="category-image"
+        src="assets/images/cetagores/icon5.png"
+        alt="Baby and kids category"
+        width="400"
+        height="300"
+        loading="lazy"
+        data-i18n-alt="alt.baby-and-kids-category-6c87fe81"
+      >
+      <h3 class="category-title" data-i18n="text.baby-amp-kids-c6448ced">
+        Baby &amp; Kids
+      </h3>
+      <p class="category-description" data-i18n="text.products-for-babies-toddlers-and-children-ba02e4ed">
+        Products for babies, toddlers and children.
+      </p>
+      <p class="category-count">
+        <span data-category-count="baby-kids">0</span>
+        <span data-i18n="text.products-fbdc4f23">products</span>
+      </p>
+      <a
+        class="category-action"
+        href="#category-page"
+        data-action="open-category"
+        data-category="baby-kids"
+        data-i18n="text.view-category-38de8ecd"
+      >View Category</a>
+    </li>
+
+  </ul>
+
+  <!-- View All Products -->
+  <a
+    class="view-all-categories"
+    id="view-all-category"
+    href="#category-page"
+    data-action="open-category"
+    data-category="all"
+    data-i18n="text.view-all-products"
+  >View All Products</a>
+
+</section>
 
       <!-- 9. FLASH DEALS -->
       <section class="flash-deals" id="flash-deals" aria-labelledby="flash-deals-heading">
