@@ -1089,50 +1089,573 @@
       </div>
     </section>
 
-    <!-- 22. ACCOUNT VIEW -->
-    <!-- Actual login and customer accounts require additional application logic and a suitable backend. -->
-    <section class="page-view account-page" id="account-page" data-page="account-page" data-view="account" aria-labelledby="account-title" hidden>
-      <h1 id="account-title" data-i18n="text.my-account-b51b2b0d">My Account</h1>
-      <div id="account-content" data-container="account"></div>
-      <!-- Markup hooks only: no authentication, submission, geolocation or Sheets write.
-           A verified backend must generate the event timestamp with a timezone after consent.
-           Keep this static form outside account-content so existing rendering can reuse that container. -->
-      <div class="account-profile-form" id="account-profile-form" role="form" aria-labelledby="account-profile-heading" aria-describedby="account-integration-status account-sheets-notice" data-integration-status="not-configured">
-        <h2 id="account-profile-heading" data-i18n="text.customer-information-49a89ca9">Customer information</h2>
-        <p id="account-integration-status" data-i18n="text.secure-sign-in-and-google-sheets-integration-are-not-6db6d930">Secure sign-in and Google Sheets integration are not configured. This form does not sign you in or send your information.</p>
-        <div class="form-field">
-          <label for="account-customer-name" data-i18n="text.customer-name-309c693a">Customer name</label>
-          <input type="text" id="account-customer-name" name="customerName" autocomplete="name" required>
-        </div>
-        <div class="form-field">
-          <label for="account-customer-email" data-i18n="text.gmail-email-address-53c7eca0">Gmail / email address</label>
-          <input type="email" id="account-customer-email" name="customerEmail" autocomplete="email" required>
-        </div>
-        <div class="form-field">
-          <label for="account-customer-phone" data-i18n="text.mobile-number-8e5c12de">Mobile number</label>
-          <input type="tel" id="account-customer-phone" name="customerPhone" autocomplete="tel" inputmode="tel" required>
-        </div>
-        <div class="form-field">
-          <label for="account-customer-location" data-i18n="text.location-or-delivery-area-00613d2c">Location or delivery area</label>
-          <input type="text" id="account-customer-location" name="customerLocation" autocomplete="address-level2" required>
-        </div>
-        <div class="form-field">
-          <label for="account-event-datetime" data-i18n="text.event-date-and-time-e2ea851f">Event date and time</label>
-          <input type="text" id="account-event-datetime" name="eventDateTime" readonly placeholder="Recorded after integration is enabled" aria-describedby="account-sheets-notice" data-timestamp-source="server" data-i18n-placeholder="placeholder.recorded-after-integration-is-enabled-f7319851">
-        </div>
-        <p id="account-sheets-notice" data-i18n="text.once-secure-sign-in-and-integration-are-enabled-your-0c3a1019">Once secure sign-in and integration are enabled, your name, Gmail/email address, mobile number, location or delivery area, and the event date and time will be sent to and stored in Google Sheets only with your consent. Passwords will not be sent, and browser geolocation will not be requested.</p>
-        <div class="form-field checkbox-field">
-          <input type="checkbox" id="account-sheets-consent" name="sheetsConsent" required aria-describedby="account-sheets-notice account-integration-status">
-          <label for="account-sheets-consent" data-i18n="text.i-consent-to-sending-and-storing-the-customer-inform-49f38839">I consent to sending and storing the customer information listed above in Google Sheets when the integration is enabled.</label>
-        </div>
-      </div>
-      <div class="empty-state" id="account-empty-state">
-        <p data-i18n="text.account-features-are-not-available-yet-677d3015">Account features are not available yet.</p>
-        <a href="/" data-action="continue-shopping" data-page="home-page" data-i18n="text.continue-shopping-ce301772">Continue Shopping</a>
-      </div>
-      <a href="#order-history-page" data-action="open-page" data-page="order-history-page" data-i18n="text.view-order-history-0714482c">View Order History</a>
-    </section>
+    <!-- 22. ACCOUNT VIEW — SHOBPABEN AUTHENTICATION UI -->
+<section
+  class="page-view account-page"
+  id="account-page"
+  data-page="account-page"
+  data-view="account"
+  aria-labelledby="account-title"
+  hidden
+>
+  <h1 id="account-title" class="sr-only" data-i18n="text.my-account-b51b2b0d">
+    My Account
+  </h1>
 
+  <div id="account-content" data-container="account"></div>
+
+  <div class="account-auth-layout">
+
+    <!-- LEFT: BRANDING PANEL -->
+    <aside class="account-brand-panel" aria-label="ShobPaben introduction">
+
+      <div class="account-brand-decoration" aria-hidden="true">
+        <span class="account-brand-orbit account-brand-orbit-one"></span>
+        <span class="account-brand-orbit account-brand-orbit-two"></span>
+        <span class="account-brand-orbit account-brand-orbit-three"></span>
+      </div>
+
+      <div class="account-brand-content">
+
+        <div class="account-brand-symbol" aria-hidden="true">
+          <svg
+            viewBox="0 0 100 100"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M50 8V92M8 50H92M20.3 20.3L79.7 79.7M79.7 20.3L20.3 79.7"
+              stroke="currentColor"
+              stroke-width="9"
+              stroke-linecap="round"
+            />
+            <circle cx="50" cy="50" r="9" fill="currentColor"/>
+          </svg>
+        </div>
+
+        <h2 class="account-brand-heading">
+          Hello,<br>
+          ShobPaben!
+          <span class="account-brand-wave" aria-hidden="true">👋</span>
+        </h2>
+
+        <p class="account-brand-description">
+          Discover everyday essentials, shop your favourite products
+          and enjoy a simpler shopping experience with ShobPaben.
+        </p>
+
+      </div>
+
+      <div class="account-brand-footer">
+        <p>© 2026 ShobPaben. All rights reserved.</p>
+      </div>
+
+    </aside>
+
+
+    <!-- RIGHT: ACCOUNT PANEL -->
+    <div class="account-auth-panel">
+
+      <div class="account-auth-inner">
+
+        <!-- BRAND WORDMARK -->
+        <header class="account-auth-header">
+          <a
+            class="account-auth-wordmark"
+            href="/"
+            aria-label="ShobPaben Home"
+            data-page="home-page"
+          >
+            SHOBPABEN
+          </a>
+        </header>
+
+
+        <!-- =====================================
+             LOGIN VIEW
+        ====================================== -->
+        <div
+          class="account-auth-view account-login-view"
+          id="account-login-view"
+          data-auth-view="login"
+        >
+
+          <div class="account-auth-intro">
+            <h2 class="account-auth-title">
+              Welcome Back!
+            </h2>
+
+            <p class="account-auth-description">
+              Don't have an account?
+              <button
+                type="button"
+                class="account-auth-text-button"
+                data-auth-switch="register"
+              >
+                Create a new account now
+              </button>
+              <br>
+              It's FREE! Takes less than a minute.
+            </p>
+          </div>
+
+
+          <div class="account-auth-form" role="group" aria-label="Sign in">
+
+            <!-- EMAIL -->
+            <div class="account-auth-field">
+              <label for="account-login-email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="account-login-email"
+                name="loginEmail"
+                placeholder="Enter your email address"
+                autocomplete="username"
+                inputmode="email"
+                aria-label="Email address"
+              >
+            </div>
+
+
+            <!-- PASSWORD -->
+            <div class="account-auth-field">
+              <label for="account-login-password">
+                Password
+              </label>
+
+              <input
+                type="password"
+                id="account-login-password"
+                name="loginPassword"
+                placeholder="Enter your password"
+                autocomplete="current-password"
+                aria-label="Password"
+              >
+            </div>
+
+
+            <!-- REMEMBER / FORGOT PASSWORD -->
+            <div class="account-auth-options">
+
+              <label class="account-remember-option">
+                <input
+                  type="checkbox"
+                  id="account-remember-me"
+                  name="rememberMe"
+                >
+                <span>Remember me</span>
+              </label>
+
+              <button
+                type="button"
+                class="account-auth-text-button account-forgot-link"
+                data-auth-switch="forgot"
+              >
+                Forgot password?
+              </button>
+
+            </div>
+
+
+            <!-- LOGIN BUTTON -->
+            <button
+              type="button"
+              class="account-auth-primary-button"
+              id="account-login-submit"
+              data-auth-action="login"
+            >
+              Sign In
+            </button>
+
+
+            <!-- DIVIDER -->
+            <div class="account-auth-divider">
+              <span>OR</span>
+            </div>
+
+
+            <!-- GOOGLE SIGN IN -->
+            <button
+              type="button"
+              class="account-auth-google-button"
+              id="account-google-login"
+              data-auth-action="google"
+            >
+              <svg
+                class="account-google-icon"
+                viewBox="0 0 48 48"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fill="#4285F4"
+                  d="M43.6 24.5c0-1.4-.1-2.8-.4-4.1H24v7.8h11c-.5 2.5-2 4.6-4.2 6v5.1h6.8c4-3.7 6-9 6-14.8Z"
+                />
+                <path
+                  fill="#34A853"
+                  d="M24 44c5.5 0 10.1-1.8 13.5-4.8l-6.8-5.1c-1.9 1.3-4.1 2-6.7 2-5.2 0-9.6-3.5-11.2-8.3H5.8v5.3A20 20 0 0 0 24 44Z"
+                />
+                <path
+                  fill="#FBBC05"
+                  d="M12.8 27.8a12 12 0 0 1 0-7.6v-5.3H5.8a20 20 0 0 0 0 18.2l7-5.3Z"
+                />
+                <path
+                  fill="#EA4335"
+                  d="M24 12c3 0 5.7 1 7.8 3.1l5.9-5.9C34.1 5.8 29.5 4 24 4A20 20 0 0 0 5.8 14.9l7 5.3C14.4 15.4 18.8 12 24 12Z"
+                />
+              </svg>
+
+              <span>Continue with Google</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             REGISTER VIEW
+             Hidden until JavaScript integration
+        ====================================== -->
+        <div
+          class="account-auth-view account-register-view"
+          id="account-register-view"
+          data-auth-view="register"
+          hidden
+        >
+
+          <div class="account-auth-intro">
+            <h2 class="account-auth-title">
+              Create Your Account
+            </h2>
+
+            <p class="account-auth-description">
+              Already have an account?
+              <button
+                type="button"
+                class="account-auth-text-button"
+                data-auth-switch="login"
+              >
+                Sign in here
+              </button>
+            </p>
+          </div>
+
+
+          <div class="account-auth-form" role="group" aria-label="Create account">
+
+            <div class="account-auth-field">
+              <label for="account-register-name">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="account-register-name"
+                name="registerName"
+                placeholder="Enter your full name"
+                autocomplete="name"
+              >
+            </div>
+
+
+            <div class="account-auth-field">
+              <label for="account-register-email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="account-register-email"
+                name="registerEmail"
+                placeholder="Enter your email address"
+                autocomplete="email"
+              >
+            </div>
+
+
+            <div class="account-auth-field">
+              <label for="account-register-phone">
+                Mobile Number <span class="account-field-optional">(Optional)</span>
+              </label>
+
+              <input
+                type="tel"
+                id="account-register-phone"
+                name="registerPhone"
+                placeholder="01XXXXXXXXX"
+                autocomplete="tel"
+                inputmode="tel"
+              >
+            </div>
+
+
+            <div class="account-auth-field">
+              <label for="account-register-password">
+                Create Password
+              </label>
+
+              <input
+                type="password"
+                id="account-register-password"
+                name="registerPassword"
+                placeholder="Create a password"
+                autocomplete="new-password"
+              >
+            </div>
+
+
+            <div class="account-auth-field">
+              <label for="account-register-confirm-password">
+                Confirm Password
+              </label>
+
+              <input
+                type="password"
+                id="account-register-confirm-password"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                autocomplete="new-password"
+              >
+            </div>
+
+
+            <button
+              type="button"
+              class="account-auth-primary-button"
+              id="account-register-submit"
+              data-auth-action="register"
+            >
+              Create Account
+            </button>
+
+
+            <div class="account-auth-divider">
+              <span>OR</span>
+            </div>
+
+
+            <button
+              type="button"
+              class="account-auth-google-button"
+              data-auth-action="google"
+            >
+              <span class="account-google-letter" aria-hidden="true">G</span>
+              <span>Sign up with Google</span>
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- =====================================
+             FORGOT PASSWORD VIEW
+        ====================================== -->
+        <div
+          class="account-auth-view account-forgot-view"
+          id="account-forgot-view"
+          data-auth-view="forgot"
+          hidden
+        >
+
+          <div class="account-auth-intro">
+            <h2 class="account-auth-title">
+              Forgot Password?
+            </h2>
+
+            <p class="account-auth-description">
+              Enter your registered email address.
+              We'll help you reset your password.
+            </p>
+          </div>
+
+
+          <div class="account-auth-form" role="group" aria-label="Password recovery">
+
+            <div class="account-auth-field">
+              <label for="account-reset-email">
+                Email Address
+              </label>
+
+              <input
+                type="email"
+                id="account-reset-email"
+                name="resetEmail"
+                placeholder="Enter your registered email"
+                autocomplete="email"
+                inputmode="email"
+              >
+            </div>
+
+
+            <button
+              type="button"
+              class="account-auth-primary-button"
+              id="account-reset-submit"
+              data-auth-action="reset-password"
+            >
+              Send Reset Link
+            </button>
+
+
+            <button
+              type="button"
+              class="account-auth-back-button"
+              data-auth-switch="login"
+            >
+              ← Back to Sign In
+            </button>
+
+          </div>
+
+        </div>
+
+
+        <!-- ACCOUNT MESSAGE / STATUS AREA -->
+        <div
+          class="account-auth-status"
+          id="account-auth-status"
+          role="status"
+          aria-live="polite"
+          hidden
+        ></div>
+
+
+        <!-- ORDER HISTORY LINK -->
+        <div class="account-auth-bottom-link">
+          <a
+            href="#order-history-page"
+            data-action="open-page"
+            data-page="order-history-page"
+          >
+            View Order History
+          </a>
+        </div>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!--
+    LEGACY PROFILE HOOKS
+    Kept hidden to avoid unnecessarily removing existing JavaScript references.
+    Actual profile saving and Google Sheets integration will be handled
+    in a later development stage.
+  -->
+  <div
+    class="account-profile-form"
+    id="account-profile-form"
+    role="form"
+    aria-labelledby="account-profile-heading"
+    aria-describedby="account-integration-status account-sheets-notice"
+    data-integration-status="not-configured"
+    hidden
+  >
+
+    <h2 id="account-profile-heading">
+      Customer information
+    </h2>
+
+    <p id="account-integration-status">
+      Secure sign-in and Google Sheets integration are not configured.
+    </p>
+
+    <div class="form-field">
+      <label for="account-customer-name">Customer name</label>
+      <input
+        type="text"
+        id="account-customer-name"
+        name="customerName"
+        autocomplete="name"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="account-customer-email">Gmail / email address</label>
+      <input
+        type="email"
+        id="account-customer-email"
+        name="customerEmail"
+        autocomplete="email"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="account-customer-phone">Mobile number</label>
+      <input
+        type="tel"
+        id="account-customer-phone"
+        name="customerPhone"
+        autocomplete="tel"
+        inputmode="tel"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="account-customer-location">Location or delivery area</label>
+      <input
+        type="text"
+        id="account-customer-location"
+        name="customerLocation"
+        autocomplete="address-level2"
+      >
+    </div>
+
+    <div class="form-field">
+      <label for="account-event-datetime">Event date and time</label>
+      <input
+        type="text"
+        id="account-event-datetime"
+        name="eventDateTime"
+        readonly
+      >
+    </div>
+
+    <p id="account-sheets-notice">
+      Customer information will only be sent to Google Sheets when
+      the integration is enabled and the customer has provided consent.
+      Passwords will never be sent to Google Sheets.
+    </p>
+
+    <div class="form-field checkbox-field">
+      <input
+        type="checkbox"
+        id="account-sheets-consent"
+        name="sheetsConsent"
+      >
+      <label for="account-sheets-consent">
+        I consent to sending and storing my customer information in Google Sheets.
+      </label>
+    </div>
+
+  </div>
+
+
+  <!-- EXISTING ACCOUNT EMPTY STATE — KEPT FOR COMPATIBILITY -->
+  <div class="empty-state" id="account-empty-state" hidden>
+    <p data-i18n="text.account-features-are-not-available-yet-677d3015">
+      Account features are not available yet.
+    </p>
+
+    <a
+      href="/"
+      data-action="continue-shopping"
+      data-page="home-page"
+      data-i18n="text.continue-shopping-ce301772"
+    >
+      Continue Shopping
+    </a>
+  </div>
+
+</section>
     <!-- 23. ORDER HISTORY VIEW -->
     <!-- Persistent order history requires a backend and customer authentication. -->
     <section class="page-view order-history-page" id="order-history-page" data-page="order-history-page" data-view="order-history" aria-labelledby="order-history-title" hidden>
@@ -1308,5 +1831,6 @@
   <!-- 28. END OF DOCUMENT -->
   <!-- ShobPaben frontend interactions -->
   <script src="./js/app.js" defer></script>
+  <script type="module" src="./js/firebase-auth.js"></script>
 </body>
 </html>
