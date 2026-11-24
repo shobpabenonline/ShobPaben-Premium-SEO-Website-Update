@@ -4032,7 +4032,7 @@
     'Newsletter sign-up is not available yet. Your email was not saved.': 'নিউজলেটার সাবস্ক্রিপশন এখনো চালু নেই। আপনার ইমেইল সংরক্ষণ করা হয়নি।'
   };
 
-  const STATIC_TEXT_TRANSLATIONS = {
+    const STATIC_TEXT_TRANSLATIONS = {
     'Skip to main content': 'মূল কনটেন্টে যান', 'Showing': 'দেখানো হচ্ছে', 'published products': 'প্রকাশিত পণ্য', 'View Offers': 'অফার দেখুন', 'Search products': 'পণ্য খুঁজুন',
     'Search for products, brands and more...': 'পণ্য, ব্র্যান্ড ও আরও খুঁজুন...', 'Search in this category': 'এই ক্যাটাগরিতে খুঁজুন',
     'Minimum price (৳)': 'সর্বনিম্ন মূল্য (৳)', 'Maximum price (৳)': 'সর্বোচ্চ মূল্য (৳)', 'Availability': 'প্রাপ্যতা',
@@ -4082,6 +4082,30 @@
     'Go to Contact Page': 'যোগাযোগ পৃষ্ঠায় যান', 'Open WhatsApp with Order Details': 'অর্ডারের বিবরণসহ WhatsApp খুলুন',
     'Newsletter sign-up is not available yet. Your email was not saved.': 'নিউজলেটার সাবস্ক্রিপশন এখনো চালু নেই। আপনার ইমেইল সংরক্ষণ করা হয়নি.'
   };
+
+  /* Help Line Bengali translations */
+
+  Object.assign(STATIC_TEXT_TRANSLATIONS, {
+
+    'HELP LINE': 'হেল্পলাইন',
+
+    'Help Line': 'হেল্পলাইন',
+
+    'Need help? Contact us.':
+      'সহায়তা প্রয়োজন? আমাদের সাথে যোগাযোগ করুন।',
+
+    'CALL US': 'কল করুন',
+
+    'Tap the number to call':
+      'নম্বরে চাপ দিয়ে কল করুন',
+
+    'Connect With Us':
+      'আমাদের সাথে যুক্ত থাকুন',
+
+    'Instagram and TikTok links will be added soon.':
+      'Instagram ও TikTok-এর লিংক শিগগিরই যুক্ত করা হবে।'
+
+  });
 
   STATIC_TEXT_TRANSLATIONS['Online shopping in Bangladesh — ShobPaben.online'] =
     'বাংলাদেশে অনলাইন কেনাকাটা — ShobPaben.online';
@@ -6835,13 +6859,114 @@
     return WHATSAPP_BASE + '?text=' + encodeURIComponent(lines.join('\n'));
   }
 
-  function setupWhatsAppLinks() {
+   function setupWhatsAppLinks() {
     $$('a[href^="https://wa.me/"]').forEach(link => {
       if (link.id !== 'whatsapp-order-button') link.href = WHATSAPP_BASE; // one source of truth for the number
       link.target = '_blank';
       link.rel = 'noopener noreferrer';
     });
     if (dom.whatsappOrder) dom.whatsappOrder.href = buildOrderWhatsAppUrl(null);
+  }
+
+  /* ==========================================================
+     SHOBPABEN FLOATING HELP LINE WIDGET
+     ========================================================== */
+
+  function setupHelpWidget() {
+
+    const widget = byId('help-widget');
+    const toggle = byId('help-widget-toggle');
+    const panel = byId('help-widget-panel');
+    const closeButton = byId('help-widget-close');
+
+    // Stop if the HTML widget does not exist.
+    if (!widget || !toggle || !panel || !closeButton) {
+      return;
+    }
+
+    // Open or close the panel.
+    function setHelpWidgetOpen(isOpen) {
+
+      widget.classList.toggle('is-open', isOpen);
+
+      toggle.setAttribute(
+        'aria-expanded',
+        String(isOpen)
+      );
+
+      toggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Close Help Line' : 'Open Help Line'
+      );
+
+      panel.setAttribute(
+        'aria-hidden',
+        String(!isOpen)
+      );
+
+      // Prevent keyboard focus inside a closed panel.
+      panel.inert = !isOpen;
+    }
+
+    // Toggle on tab click.
+    toggle.addEventListener('click', function () {
+
+      const isCurrentlyOpen =
+        widget.classList.contains('is-open');
+
+      setHelpWidgetOpen(!isCurrentlyOpen);
+
+    });
+
+    // Close button.
+    closeButton.addEventListener('click', function () {
+
+      setHelpWidgetOpen(false);
+      toggle.focus();
+
+    });
+
+    // Close when clicking outside the widget.
+    document.addEventListener('click', function (event) {
+
+      const isOpen =
+        widget.classList.contains('is-open');
+
+      if (isOpen && !widget.contains(event.target)) {
+        setHelpWidgetOpen(false);
+      }
+
+    });
+
+    // Close after selecting a phone or social link.
+    panel.querySelectorAll('a[href]').forEach(function (link) {
+
+      link.addEventListener('click', function () {
+
+        setHelpWidgetOpen(false);
+        toggle.focus();
+
+      });
+
+    });
+
+    // Close on Escape key.
+    document.addEventListener('keydown', function (event) {
+
+      if (
+        event.key === 'Escape' &&
+        widget.classList.contains('is-open')
+      ) {
+
+        event.stopPropagation();
+
+        setHelpWidgetOpen(false);
+        toggle.focus();
+
+      }
+
+    });
+
   }
 
   function onWhatsAppOrderClick(link) {
@@ -7139,6 +7264,7 @@
     setupImageFallbacks();
     applyStaticSettings();
     setupWhatsAppLinks();
+    setupHelpWidget();  // NEW: Initialize Help Line widget
 
     // Restore saved data (validated against the current catalogue)
     state.wishlist = loadWishlist();

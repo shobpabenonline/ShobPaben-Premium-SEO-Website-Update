@@ -18,7 +18,7 @@
    15. Checkout & forms
    16. Invoice
    17. Wishlist / account / history / about / contact
-   18. WhatsApp float & footer
+   18. Help Line widget & footer
    19. Responsive
    20. Accessibility & motion
    21. Print
@@ -1358,26 +1358,422 @@ legend { padding: 0; font-weight: 650; }
 .contact-page > p { max-width: 62ch; color: var(--text-soft); }
 .contact-whatsapp-link { margin: var(--space-2) 0 var(--space-5); }
 
-/* 18. WHATSAPP FLOAT & FOOTER ------------------------------------------- */
-.floating-whatsapp-button {
+/* ==========================================================
+   SHOBPABEN FLOATING HELP LINE WIDGET
+   ========================================================== */
+
+.help-widget {
   position: fixed;
-  right: max(16px, env(safe-area-inset-right));
-  bottom: max(16px, env(safe-area-inset-bottom));
-  z-index: 90;
+  top: 50%;
+  left: 0;
+  z-index: 120;
+
+  display: flex;
+  align-items: center;
+
+  max-width: 100vw;
+
+  transform: translateY(-50%);
+}
+
+/* HELP LINE TAB */
+
+.help-widget-trigger {
+  display: flex;
+  flex: 0 0 50px;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 13px;
+
+  width: 50px;
+  min-height: 164px;
+
+  padding: 15px 8px;
+
+  border: 0;
+  border-radius: 0 11px 11px 0;
+
+  background: var(--brand);
+  color: #fff;
+
+  font-family: inherit;
+  cursor: pointer;
+
+  box-shadow: 3px 5px 16px rgba(30, 59, 56, 0.20);
+
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.help-widget-trigger:hover {
+  background: var(--brand-hover);
+  box-shadow: 4px 6px 20px rgba(30, 59, 56, 0.28);
+}
+
+.help-widget-trigger svg {
+  display: block;
+  width: 23px;
+  height: 23px;
+}
+
+.help-widget-trigger-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+
+  color: #fff;
+
+  font-size: 14px;
+  font-weight: 750;
+  letter-spacing: 2px;
+  line-height: 1;
+}
+
+/* SLIDE OUT PANEL */
+
+.help-widget-panel {
+  position: relative;
+
+  width: min(310px, calc(100vw - 70px));
+  max-height: min(75vh, 550px);
+
+  margin-left: 8px;
+  padding: 22px;
+
+  overflow-y: auto;
+
+  border: 1px solid var(--border);
+  border-radius: 13px;
+
+  background: var(--surface);
+  color: var(--text);
+
+  box-shadow: 0 10px 35px rgba(30, 59, 56, 0.18);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transform: translateX(calc(-100% - 65px));
+
+  transition:
+    transform 300ms cubic-bezier(.22, .61, .36, 1),
+    opacity 220ms ease,
+    visibility 0s linear 300ms;
+}
+
+/* OPEN STATE */
+
+.help-widget.is-open .help-widget-panel {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+
+  transform: translateX(0);
+
+  transition:
+    transform 300ms cubic-bezier(.22, .61, .36, 1),
+    opacity 220ms ease,
+    visibility 0s;
+}
+
+/* PANEL HEADER */
+
+.help-widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 12px;
+
+  margin-bottom: 12px;
+}
+
+.help-widget-kicker {
+  margin: 0 0 4px;
+
+  color: var(--brand);
+
+  font-size: 10px;
+  font-weight: 750;
+  letter-spacing: 1.4px;
+}
+
+.help-widget-header h2 {
+  margin: 0;
+
+  color: var(--text);
+
+  font-size: 22px;
+  font-weight: 750;
+}
+
+.help-widget-close {
   display: grid;
   place-items: center;
-  width: 56px;
-  height: 56px;
+
+  flex: 0 0 34px;
+
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
   border-radius: 50%;
-  background: var(--whatsapp);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(20, 90, 50, 0.35);
-  text-decoration: none;
-  transition: background-color var(--t) var(--ease), transform var(--t) var(--ease), box-shadow var(--t) var(--ease);
+
+  background: var(--surface-subtle);
+  color: var(--text);
+
+  cursor: pointer;
 }
-.floating-whatsapp-button:hover { background: var(--whatsapp-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(20, 90, 50, 0.4); }
-.floating-whatsapp-button .icon { width: 28px; height: 28px; vertical-align: baseline; }
-.floating-whatsapp-button:focus-visible { outline-color: var(--text); outline-offset: 3px; }
+
+.help-widget-close:hover {
+  background: var(--brand-tint);
+  color: var(--brand);
+}
+
+.help-widget-close svg {
+  width: 17px;
+  height: 17px;
+}
+
+.help-widget-intro {
+  margin: 0 0 17px;
+
+  color: var(--text-soft);
+
+  font-size: 13px;
+}
+
+/* PHONE NUMBER CARD */
+
+.help-widget-phone-card {
+  display: flex;
+  flex-direction: column;
+
+  gap: 7px;
+
+  padding: 16px;
+
+  border: 1px solid rgba(40, 122, 116, 0.15);
+  border-radius: 10px;
+
+  background: var(--brand-tint);
+}
+
+.help-phone-label {
+  color: var(--brand-hover);
+
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.3px;
+}
+
+.help-phone-number {
+  display: inline-block;
+
+  color: var(--brand-deep);
+
+  font-size: clamp(17px, 5vw, 21px);
+  font-weight: 800;
+
+  line-height: 1.35;
+
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.help-phone-number:hover {
+  color: var(--brand);
+  text-decoration: underline;
+}
+
+.help-phone-hint {
+  color: var(--text-muted);
+  font-size: 11px;
+}
+
+/* SOCIAL SECTION */
+
+.help-widget-social {
+  margin-top: 20px;
+}
+
+.help-social-heading {
+  margin: 0 0 12px;
+
+  color: var(--text);
+
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.help-social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  gap: 11px;
+}
+
+.help-social-link {
+  display: inline-grid;
+  place-items: center;
+
+  flex: 0 0 42px;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  color: #fff;
+  text-decoration: none;
+
+  box-shadow: 0 3px 9px rgba(30, 59, 56, 0.13);
+
+  transition:
+    transform 180ms ease,
+    filter 180ms ease;
+}
+
+.help-social-link svg {
+  width: 20px;
+  height: 20px;
+}
+
+.help-social-link:hover {
+  color: #fff;
+  filter: brightness(1.08);
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+/* PLATFORM COLORS */
+
+.help-social-whatsapp {
+  background: #1A9650;
+}
+
+.help-social-instagram {
+  background: #C13584;
+}
+
+.help-social-facebook {
+  background: #1877F2;
+}
+
+.help-social-tiktok {
+  background: #111111;
+}
+
+/* UPCOMING SOCIAL LINKS */
+
+.help-social-link.is-disabled {
+  opacity: 0.43;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.help-social-link.is-disabled:hover {
+  transform: none;
+  filter: none;
+}
+
+.help-coming-soon {
+  margin: 12px 0 0;
+
+  color: var(--text-muted);
+
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+/* FOCUS ACCESSIBILITY */
+
+.help-widget :focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 3px;
+}
+
+.help-widget-trigger:focus-visible {
+  outline-color: var(--brand-deep);
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 640px) {
+
+  .help-widget-trigger {
+    flex-basis: 44px;
+
+    width: 44px;
+    min-height: 145px;
+
+    gap: 11px;
+    padding: 12px 7px;
+  }
+
+  .help-widget-trigger-label {
+    font-size: 12px;
+    letter-spacing: 1.6px;
+  }
+
+  .help-widget-panel {
+    width: min(290px, calc(100vw - 61px));
+
+    margin-left: 6px;
+    padding: 17px;
+
+    max-height: 72vh;
+  }
+
+  .help-social-links {
+    gap: 9px;
+  }
+
+  .help-social-link {
+    flex-basis: 39px;
+    width: 39px;
+    height: 39px;
+  }
+
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 380px) {
+
+  .help-widget-trigger {
+    flex-basis: 40px;
+    width: 40px;
+  }
+
+  .help-widget-panel {
+    width: calc(100vw - 55px);
+    padding: 14px;
+  }
+
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .help-widget-panel,
+  .help-widget-trigger,
+  .help-social-link {
+    transition: none !important;
+  }
+
+}
 
 .site-footer {
   display: grid;
@@ -1602,8 +1998,9 @@ legend { padding: 0; font-weight: 650; }
   .invoice-table thead th { font-size: 0.6875rem; letter-spacing: 0.02em; }
   .confirmation-actions > * { flex: 1 1 100%; }
 
-  .floating-whatsapp-button { width: 48px; height: 48px; right: max(12px, env(safe-area-inset-right)); bottom: max(12px, env(safe-area-inset-bottom)); }
-  .floating-whatsapp-button .icon { width: 24px; height: 24px; }
+  .detail-main-image { max-height: min(78vw, 420px); }
+  .product-name { overflow-wrap: anywhere; }
+  .price-current, .price-original { white-space: nowrap; }
   .detail-main-image { max-height: min(78vw, 420px); }
   .product-name { overflow-wrap: anywhere; }
   .price-current, .price-original { white-space: nowrap; }
@@ -1646,13 +2043,23 @@ legend { padding: 0; font-weight: 650; }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  .product-card:hover, .floating-whatsapp-button:hover { transform: none; }
+
+  .product-card:hover,
+  .help-widget-trigger:hover,
+  .help-social-link:hover {
+    transform: none;
+  }
 }
 
 /* 21. PRINT (invoice only) ---------------------------------------------- */
@@ -1666,7 +2073,7 @@ legend { padding: 0; font-weight: 650; }
   .announcement-bar,
   .site-header,
   .main-navigation-menu,
-  .floating-whatsapp-button,
+  .help-widget,
   .quick-view-dialog,
   .site-footer,
   .confirmation-actions,
@@ -2868,4 +3275,123 @@ legend { padding: 0; font-weight: 650; }
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
   }
+}
+
+/* ==========================================================================
+   FOOTER SOCIAL MEDIA ICONS
+   ========================================================================== */
+
+.footer-social-caption {
+  margin: 13px 0 9px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 0;
+}
+
+.site-footer .footer-social-link {
+  display: inline-grid;
+  place-items: center;
+
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+
+  color: #FFFFFF;
+  text-decoration: none;
+
+  box-shadow: 0 2px 7px rgba(0, 0, 0, 0.16);
+
+  transition:
+    transform 180ms ease,
+    filter 180ms ease,
+    box-shadow 180ms ease;
+}
+
+/* Facebook */
+.footer-social-facebook {
+  background: #1877F2;
+}
+
+/* Instagram */
+.footer-social-instagram {
+  background: #C13584;
+}
+
+/* TikTok */
+.footer-social-tiktok {
+  background: #111111;
+}
+
+/* Email */
+.footer-social-email {
+  background: #69757B;
+}
+
+/* Icon size */
+.footer-social-link svg {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+/* Hover effects */
+.site-footer .footer-social-link:hover {
+  color: #FFFFFF;
+  text-decoration: none;
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.23);
+}
+
+/* Keyboard accessibility */
+.site-footer .footer-social-link:focus-visible {
+  outline: 2px solid #FEF3E2;
+  outline-offset: 3px;
+}
+
+/* Press effect */
+.site-footer .footer-social-link:active {
+  transform: scale(0.96);
+}
+
+/* Mobile screens */
+@media (max-width: 640px) {
+  .footer-social-links {
+    gap: 8px;
+  }
+
+  .site-footer .footer-social-link {
+    flex-basis: 38px;
+    width: 38px;
+    height: 38px;
+  }
+
+  .footer-social-link svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .site-footer .footer-social-link {
+    transition: none;
+  }
+}
+
+/* Hide product count from all 5 homepage category cards */
+#shop-by-category .category-count {
+  display: none !important;
 }
